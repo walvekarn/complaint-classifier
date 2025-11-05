@@ -440,6 +440,63 @@ pytest tests/test_app.py -v
 
 ---
 
+## 🐳 Run with Docker
+
+The API can be containerized and run with Docker for consistent deployment across environments.
+
+### Build the Docker Image
+
+```bash
+docker build -t complaint-classifier .
+```
+
+### Run the Container
+
+```bash
+docker run -p 8000:8000 complaint-classifier
+```
+
+The API will be available at `http://localhost:8000`
+
+### With Environment Variables (for LLM support)
+
+```bash
+docker run -p 8000:8000 \
+  -e OPENAI_API_KEY="sk-..." \
+  complaint-classifier
+```
+
+### Docker Compose (Optional)
+
+Create a `docker-compose.yml`:
+
+```yaml
+version: '3.8'
+
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    restart: unless-stopped
+```
+
+Run with:
+```bash
+docker-compose up
+```
+
+### Image Details
+
+- **Base Image**: `python:3.11-slim`
+- **Port**: 8000
+- **Size**: ~200MB (optimized with slim base)
+- **Includes**: All dependencies from `requirements.txt`
+
+---
+
 ## 🤖 Optional LLM Assist
 
 The system includes optional LLM-enhanced classification for improved accuracy. The implementation uses safe fallbacks and never exposes API keys.
