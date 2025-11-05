@@ -7,6 +7,12 @@
 *.tar
 *.7z
 
+# But allow small sample/output files in data folders
+!data/outputs/*.csv
+!data/outputs/*.json
+!data/samples/*.csv
+!data/samples/*.json
+
 # Python
 __pycache__/
 *.py[cod]
