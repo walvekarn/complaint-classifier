@@ -274,6 +274,80 @@ complaint-classifier/
 
 ---
 
+## 📊 Illustrative Impact
+
+Use the built-in ROI calculator to estimate time and cost savings for your organization:
+
+### Calculate Your ROI
+
+```bash
+python3 scripts/roi.py --cases 100000 --auto-rate 0.5
+```
+
+**Sample Output:**
+
+```
+======================================================================
+COMPLAINT CLASSIFIER ROI ANALYSIS
+======================================================================
+
+📊 INPUT PARAMETERS
+----------------------------------------------------------------------
+  Annual complaint volume:       100,000 cases
+  Automation rate:               50%
+  Manual processing time:        6.0 min/case
+  Automated processing time:     3.0 sec/case
+  Labor cost:                    $30.00/hour
+
+📈 BASELINE (100% Manual Processing)
+----------------------------------------------------------------------
+  Total hours required:          10,000 hours/year
+  Total cost:                    $300,000.00/year
+
+⚡ WITH AUTOMATION
+----------------------------------------------------------------------
+  Automated cases:               50,000 cases
+  Manual cases remaining:        50,000 cases
+  Total hours required:          5,042 hours/year
+  Total cost:                    $151,250.00/year
+
+💰 ESTIMATED SAVINGS
+----------------------------------------------------------------------
+  Time saved:                    4,958 hours/year (49.6%)
+  Cost saved:                    $148,750.00/year (49.6%)
+  Equivalent FTE saved:          2.38 full-time employees
+
+⚠️  NOTE: These are illustrative estimates based on assumptions.
+    Actual results will vary based on implementation and workflows.
+======================================================================
+```
+
+### Scenario Examples
+
+**Conservative Estimate** (30% automation, 7 min/case):
+```bash
+python3 scripts/roi.py --cases 284500 --minutes 7 --auto-rate 0.3 --hourly-cost 30
+```
+
+**Optimistic Estimate** (70% automation, 5 min/case):
+```bash
+python3 scripts/roi.py --cases 284500 --minutes 5 --auto-rate 0.7 --hourly-cost 35
+```
+
+### Parameters
+
+| Parameter | Default | Range | Description |
+|-----------|---------|-------|-------------|
+| `--cases` | *required* | any | Annual complaint volume |
+| `--minutes` | 6.0 | 5-7 | Minutes per manual case |
+| `--auto-rate` | 0.5 | 0.0-1.0 | Automation rate (0.5 = 50%) |
+| `--hourly-cost` | 30.0 | any | Labor cost per hour (USD) |
+| `--seconds-auto` | 3.0 | any | Seconds per automated case |
+
+**Note:** These calculations provide illustrative estimates. Actual results depend on complaint complexity, team expertise, and implementation details.
+
+---
+
 ## 🚀 Use Cases
 
 ### Financial Institutions
