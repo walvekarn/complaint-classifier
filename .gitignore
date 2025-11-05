@@ -7,12 +7,11 @@
 *.tar
 *.7z
 
-# Ignore data folder by default
-data/*
-
-# But allow small sample/output files in data subfolders
-!data/samples/**
-!data/outputs/**
+# But allow small sample/output files in data folders
+!data/outputs/*.csv
+!data/outputs/*.json
+!data/samples/*.csv
+!data/samples/*.json
 
 # Python
 __pycache__/

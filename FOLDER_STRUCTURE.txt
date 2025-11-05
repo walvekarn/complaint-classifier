@@ -1,126 +1,168 @@
 ================================================================================
-FOLDER STRUCTURE
+PROJECT FOLDER STRUCTURE
 ================================================================================
 Project: AI-Powered Consumer Complaint Classifier
-Author: Nikita Walvekar (walvekarn) — Portfolio POC
-Date: November 5, 2025
+Author: Nikita Walvekar (walvekarn)
+Repository: https://github.com/walvekarn/complaint-classifier
 
 ================================================================================
-REPOSITORY STRUCTURE
+REPOSITORY TREE
 ================================================================================
 
 complaint-classifier/
 │
-├── README.md                          ← Main documentation
-├── LICENSE                            ← MIT License
-├── FOLDER_STRUCTURE.txt               ← This file
-├── requirements.txt                   ← Python dependencies
+├── .gitignore                         → Protects from large files (*.csv, *.xlsx)
+├── README.md                          → Main documentation with charts
+├── GITHUB_SETUP.md                    → Setup instructions
+├── FOLDER_STRUCTURE.txt               → This file
 │
-├── charts/                            📊 Visualizations
-│   ├── complaint_categories.png       ← Product distribution
-│   ├── confidence_distribution.png    ← Confidence levels
-│   ├── routing_breakdown.png          ← Department routing
-│   └── severity_distribution.png      ← Severity breakdown
+├── charts/                            → Visualizations (641 KB)
+│   ├── complaint_categories.png       → Product distribution bar chart
+│   ├── confidence_distribution.png    → Confidence levels bar chart
+│   ├── routing_breakdown.png          → Department routing pie chart
+│   └── severity_distribution.png      → Severity breakdown bar chart
 │
 ├── data/
-│   ├── outputs/                       📤 Classification Results
-│   │   ├── classified_sample_100.json ← 100 classified complaints
-│   │   └── validation_report.csv      ← Validation data
+│   ├── outputs/                       → Classification results (99 KB)
+│   │   ├── classified_sample_100.json → 100 classified complaints
+│   │   └── validation_report.csv      → 10-item validation data
 │   │
-│   └── samples/                       📂 Sample Input Data
-│       └── complaints_sample_100.csv  ← Raw input sample
+│   └── samples/                       → Reserved for future samples
 │
-├── docs/                              📚 Documentation
-│   ├── PORTFOLIO_SUMMARY.md           ← Quick overview
-│   └── VALIDATION_SUMMARY.md          ← Accuracy validation
+├── docs/                              → Documentation (16 KB)
+│   ├── PORTFOLIO_SUMMARY.md           → Project overview for recruiters
+│   └── VALIDATION_SUMMARY.md          → Accuracy validation details
 │
-├── prompts/                           💭 Technical Details
-│   └── prompt_used.txt                ← Classification logic & methodology
+├── prompts/                           → Technical documentation (14 KB)
+│   └── prompt_used.txt                → Classification logic & algorithms
 │
-└── reports/                           📊 Analysis Reports
-    ├── classification_report.txt      ← Summary statistics
-    ├── metrics_summary.txt            ← Detailed metrics
-    └── validation_form.txt            ← Manual validation checklist
+└── reports/                           → Analysis reports (27 KB)
+    ├── classification_report.txt      → Summary statistics
+    ├── metrics_summary.txt            → Detailed metrics breakdown
+    └── validation_form.txt            → Manual validation checklist
 
 ================================================================================
-FILE COUNT
-================================================================================
-
-Total files: ~15 files
-├── Root: Configuration and documentation
-├── Charts: 4 visualizations (PNG)
-├── Data/Outputs: Classification results (JSON, CSV)
-├── Docs: 2 documentation files (Markdown)
-├── Prompts: Technical methodology (TXT)
-└── Reports: 3 analysis reports (TXT)
-
-================================================================================
-DATA NOTES
-================================================================================
-
-Large Dataset Files:
-The full CFPB dataset (284K+ complaints, ~165 MB) is stored separately.
-Repository includes only processed outputs and sample data for demonstration.
-
-================================================================================
-FILE PURPOSES
+WHAT LIVES WHERE
 ================================================================================
 
 Root Level:
-├── README.md              → Main documentation with project overview
-├── LICENSE                → MIT License
-├── FOLDER_STRUCTURE.txt   → This reference document
-└── requirements.txt       → Python dependencies
+  • .gitignore - Protects against committing large dataset files
+  • README.md - Main documentation with problem statement, results, charts
+  • GITHUB_SETUP.md - Instructions for Git setup and pushing to GitHub
+  • FOLDER_STRUCTURE.txt - This reference document
 
 charts/:
-├── complaint_categories.png   → Bar chart of product distribution
-├── confidence_distribution.png → Bar chart of confidence levels
-├── routing_breakdown.png      → Pie chart of department routing
-└── severity_distribution.png  → Bar chart of severity scores
+  • 4 PNG visualizations at 300 DPI
+  • Embedded in README.md for visual presentation
+  • Shows product distribution, severity, routing, confidence
 
 data/outputs/:
-├── classified_sample_100.json → 100 classified complaints
-└── validation_report.csv      → 10 samples for manual validation
+  • classified_sample_100.json - 100 complaints with 6-field classification
+  • validation_report.csv - First 10 complaints for manual spot-check
+  • JSON structure: complaint_id, classification{}, needs_review, original_data{}
 
 data/samples/:
-└── complaints_sample_100.csv  → Raw input sample
+  • Reserved for future sample datasets
+  • Currently empty
 
 docs/:
-├── PORTFOLIO_SUMMARY.md  → Quick project overview
-└── VALIDATION_SUMMARY.md → Detailed accuracy validation results
+  • PORTFOLIO_SUMMARY.md - Executive summary for quick review
+  • VALIDATION_SUMMARY.md - Detailed accuracy validation methodology
 
 prompts/:
-└── prompt_used.txt → Classification logic & technical documentation
+  • prompt_used.txt - Complete classification logic documentation
+  • Includes: algorithms, rules, severity scoring, sentiment analysis
+  • Technical reference for understanding how classification works
 
 reports/:
-├── classification_report.txt → Summary statistics & distributions
-├── metrics_summary.txt       → Detailed metrics analysis
-└── validation_form.txt       → Manual validation checklist
+  • classification_report.txt - Statistics on 100 complaints processed
+  • metrics_summary.txt - Distribution breakdowns and analysis
+  • validation_form.txt - Template for manual validation review
 
 ================================================================================
-PROJECT HIGHLIGHTS
+EXCLUDED FROM REPOSITORY
 ================================================================================
 
-Portfolio POC demonstrating:
-• Real-world dataset (284,500 complaints)
-• Validated accuracy (90% on 10-item spot check)
-• Professional visualizations (4 charts)
-• Complete documentation
-• End-to-end classification pipeline
-• Multi-dimensional categorization (6 attributes)
+bigdata/ (outside repo):
+  • complaint_data.csv (~80 MB) - Full dataset
+  • complaint_data.xlsx (~70 MB) - Original Excel format
+  • complaint_data.csv.zip (~15 MB) - Compressed version
+  • README.md - Explanation of excluded files
+
+Protected by .gitignore:
+  • All *.csv files (except allowed in data/outputs/)
+  • All *.xlsx files
+  • Python cache (__pycache__/)
+  • Virtual environments (venv/, env/)
+  • IDE files (.vscode/, .idea/)
+  • OS files (.DS_Store)
 
 ================================================================================
-KEY METRICS
+FILE SIZES & METRICS
 ================================================================================
 
-Dataset Size:       284,500 complaints (CFPB)
-Sample Tested:      100 complaints (~3.5s measured)
-Validation:         10-item spot check (90% product accuracy)
-Classification:     6 dimensions per complaint
-Processing Speed:   ~0.035s per complaint (measured on sample)
-Documentation:      Complete with technical methodology
+Total Repository Size: ~800 KB (GitHub-friendly)
+
+By Folder:
+  • charts/          641 KB (78.6%)
+  • data/outputs/     99 KB (12.2%)
+  • reports/          27 KB (3.3%)
+  • docs/             16 KB (2.0%)
+  • prompts/          14 KB (1.7%)
+  • root files/       18 KB (2.2%)
+
+Total Files: 17 files
+  • 4 root configuration/documentation files
+  • 4 visualization charts (PNG)
+  • 2 data output files (JSON, CSV)
+  • 2 documentation files (MD)
+  • 1 prompt/logic file (TXT)
+  • 3 analysis reports (TXT)
+  • 1 .gitignore
+
+================================================================================
+DATA FLOW
+================================================================================
+
+Input:
+  complaint_data.xlsx (284,500 rows, 18 columns)
+  └─> Sample: First 100 complaints extracted
+
+Processing:
+  Python script with rule-based NLP
+  └─> Classification across 6 dimensions
+      ├─ Product (7 categories)
+      ├─ Issue Category (8 types)
+      ├─ Severity (1-10 scale)
+      ├─ Sentiment (5 emotions)
+      ├─ Routing (7 departments)
+      └─ Confidence (0.0-1.0)
+
+Output:
+  data/outputs/classified_sample_100.json
+  └─> 100 complaints with structured classification
+      └─> Validation on first 10 (90% accuracy)
+
+Visualization:
+  charts/*.png (4 charts)
+  └─> Embedded in README.md
+
+Documentation:
+  docs/*.md + reports/*.txt
+  └─> Analysis and validation results
+
+================================================================================
+KEY CHARACTERISTICS
+================================================================================
+
+✓ Lightweight - 800 KB total (no large datasets in repo)
+✓ Organized - Clear folder structure by file type
+✓ Documented - README + technical docs + validation
+✓ Visual - 4 professional charts at high resolution
+✓ Protected - .gitignore prevents accidental large file commits
+✓ Reproducible - Full classification logic documented
+✓ Validated - 90% accuracy on 10-item spot check
 
 ================================================================================
 END OF STRUCTURE DOCUMENTATION
 ================================================================================
-

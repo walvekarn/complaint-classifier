@@ -1,29 +1,28 @@
 # 🎯 AI-Powered Consumer Complaint Classifier
 
-An intelligent system that automatically classifies and routes consumer complaints using natural language processing, achieving **90% accuracy** and reducing manual processing time from **14,000+ hours to seconds**.
+## What This Is
 
----
+A **complaint routing baseline** for the [CFPB Consumer Complaint Database](https://www.consumerfinance.gov/data-research/consumer-complaints/) that converts unstructured complaint text into structured outputs:
 
-## 📖 What This Is
+- **Category** (Product type: Credit Card, Mortgage, Student Loan, etc.)
+- **Confidence** (0.0-1.0 score for quality assurance)
+- **Severity** (1-10 urgency scale)
+- **Sentiment** (Angry, Frustrated, Confused, Neutral)
+- **Routing** (Suggested department assignment)
 
-A **complaint routing baseline** built on the [Kaggle Consumer Financial Protection Bureau (CFPB) Consumer Complaint Database](https://www.kaggle.com/datasets/cfpb/us-consumer-finance-complaints). This system converts raw complaint text into structured classifications:
+Includes a **human-in-the-loop gate** that flags low-confidence cases (<0.75) for manual review.
 
-- **Category**: Product type (Credit Card, Mortgage, Student Loan, etc.)
-- **Confidence**: Classification certainty score (0.0-1.0)
-- **Severity**: Urgency level (1-10 scale)
-- **Human-in-the-loop gate**: Flags low-confidence cases (<0.75) for manual review
-
-**Purpose**: Portfolio proof-of-concept demonstrating NLP classification, intelligent routing, and quality assurance at scale.
+**Portfolio POC** demonstrating NLP-based classification with rule-based pattern matching on 284K+ real consumer complaints.
 
 ---
 
 ## 🎯 Problems It Solves
 
-✅ **Slow Triage**: Reduces processing time from 3-5 minutes to ~2 seconds per complaint  
-✅ **Inconsistency**: Standardizes classification logic across all complaints  
-✅ **Hidden Criticals**: Auto-flags fraud and high-severity cases for immediate attention  
-✅ **Auditability**: Provides confidence scores and structured JSON output for tracking  
-✅ **Productization-Ready**: Demonstrates API-ready pipeline for production deployment
+✅ **Slow Manual Triage** - Reduces processing time from 3-5 minutes to ~2 seconds per complaint  
+✅ **Inconsistency** - Standardized classification logic eliminates reviewer variability  
+✅ **Hidden Criticals** - Auto-flags fraud, identity theft, and high-severity cases for immediate escalation  
+✅ **Auditability** - Confidence scores and structured outputs enable quality tracking  
+✅ **Productization** - Clean JSON output ready for integration with ticketing/CRM systems  
 
 ---
 
@@ -117,34 +116,6 @@ An **AI-powered classification system** that automatically:
 **Confidence Levels:**
 - High (>0.9): 42% - Ready for immediate processing
 - Low (<0.75): 58% - Flagged for manual review
-
----
-
-## ⚠️ Assumptions & Limits
-
-### Demo Scope
-- **Sample size**: 100-row demo measured (~3.5 seconds total, ~0.035s per complaint)
-- **Validation**: 10-item spot-check (product accuracy: 9/10 = 90%)
-- **Full-dataset timings**: NOT yet captured; estimates based on sample extrapolation
-
-### ROI Numbers
-- Cost savings ($422K) and time savings (14K hours) are **illustrative calculations**
-- Based on assumed manual processing rate (3 min/complaint) and labor cost ($30/hr)
-- Actual production performance would require full-scale validation
-
-### Known Limitations
-- **58% of complaints lack narrative text**, limiting confidence and accuracy
-- **Rule-based NLP** (not machine learning) - keyword matching only
-- **Sentiment detection conservative** (92% classified as neutral)
-- **Binary confidence** (0.7 or 1.0) - no gradient scoring
-- **Issue categories too broad** (46% classified as "Other")
-
-### What This Demonstrates
-✅ End-to-end classification pipeline  
-✅ Multi-dimensional categorization (6 attributes)  
-✅ Confidence-based quality gates  
-✅ Real-world data handling (284K+ records)  
-✅ Portfolio-ready architecture and documentation
 
 ---
 
@@ -368,6 +339,31 @@ complaint-classifier/
 
 ---
 
+## ⚠️ Assumptions & Limitations
+
+This is a **portfolio proof-of-concept** with the following scope:
+
+### What Was Measured
+- ✅ **100-row demo** processed in ~3.5 seconds (~0.035s per complaint)
+- ✅ **Validation**: 10-item spot-check showed **90% product classification accuracy** (9/10 correct)
+- ✅ Confidence scoring correlates with narrative availability (1.0 = full text, 0.7 = metadata only)
+
+### What Is Illustrative
+- ⚠️ **ROI numbers** ($422K savings, 14K hours) are **extrapolated estimates** based on manual timing assumptions
+- ⚠️ **Full-dataset timings** (284K complaints) were **not captured** in production conditions
+- ⚠️ Rule-based classification may miss edge cases requiring ML models
+- ⚠️ Sentiment detection is conservative (92% classified as "Neutral")
+
+### Known Constraints
+- 58% of complaints lack narrative text (limits classification depth)
+- Issue categorization needs refinement (46% classified as "Other")
+- Binary confidence scoring (0.7 or 1.0) lacks gradient
+- No comparison with production complaint routing systems
+
+**Intended Use**: Baseline demonstration for portfolio/interview discussions, not production deployment.
+
+---
+
 ## 🔮 Future Enhancements
 
 ### Phase 2 Improvements
@@ -417,196 +413,6 @@ Dataset: CFPB Consumer Complaint Database (284,500 complaints)
 | 💰 Cost Savings | $422,760/year |
 | ⏱️ Time Savings | 14,092 hours/year |
 | 🎯 Confidence | 82.6% average |
-
----
-
-## 🏗️ Architecture
-
-```mermaid
-graph TD
-    A[Raw Complaint Data<br/>284K+ complaints] --> B[Data Preprocessing<br/>Text Cleaning & Normalization]
-    B --> C[Feature Extraction<br/>Keywords & Patterns]
-    C --> D[NLP Classification Engine]
-    
-    D --> E[Product Classifier<br/>Credit Card, Mortgage, etc.]
-    D --> F[Issue Categorizer<br/>Fraud, Billing Error, etc.]
-    D --> G[Severity Scorer<br/>1-10 Risk Assessment]
-    D --> H[Sentiment Analyzer<br/>Angry, Frustrated, Neutral]
-    
-    E --> I[Routing Logic]
-    F --> I
-    G --> I
-    H --> I
-    
-    I --> J[Confidence Calculator<br/>0.0-1.0 Score]
-    J --> K{Confidence > 0.75?}
-    
-    K -->|Yes| L[Auto-Route to Department<br/>Support/Legal/Fraud/Escalation]
-    K -->|No| M[Flag for Manual Review]
-    
-    L --> N[JSON Output<br/>Structured Classification]
-    M --> N
-    
-    style A fill:#e1f5ff
-    style D fill:#fff4e1
-    style I fill:#ffe1f5
-    style N fill:#e1ffe1
-```
-
-**System Components:**
-- **Input Layer**: Excel/CSV data ingestion
-- **Processing Layer**: Text cleaning, keyword extraction, pattern matching
-- **Classification Layer**: Multi-dimensional categorization (product, issue, severity, sentiment)
-- **Decision Layer**: Intelligent routing based on classification results
-- **Output Layer**: Structured JSON with confidence scores and review flags
-
----
-
-## 🔄 Reproduce Charts
-
-The visualizations in this README are generated from a reproducible Jupyter notebook. To regenerate the charts:
-
-### Prerequisites
-```bash
-pip install -r requirements.txt
-```
-
-### Generate Charts
-```bash
-make charts
-```
-
-This will:
-- Load `data/outputs/classified_sample_100.json`
-- Compute category counts, confidence histogram, routing breakdown, and severity distribution
-- Save PNGs to `charts/` directory with filenames matching README references
-- Create a timestamped execution log in `notebooks/generate_charts_output.ipynb`
-
-The chart generation notebook is located at `notebooks/generate_charts.ipynb` and uses only matplotlib for plotting.
-
----
-
-## 🚀 API Usage
-
-The project includes a FastAPI-based REST API for real-time complaint classification.
-
-### Start the API Server
-
-```bash
-pip install -r requirements.txt
-uvicorn src.app:app --reload
-```
-
-The API will be available at `http://localhost:8000`
-
-### API Endpoints
-
-**Health Check:**
-```bash
-curl http://localhost:8000/health
-```
-
-**Classify a Complaint:**
-```bash
-curl -X POST http://localhost:8000/classify \
-  -H "Content-Type: application/json" \
-  -d '{"text": "I found unauthorized charges on my credit card!"}'
-```
-
-**Response Example:**
-```json
-{
-  "category": "Credit Card",
-  "confidence": 0.95,
-  "severity": 9,
-  "route": "Fraud Team",
-  "issue_category": "Fraud",
-  "sentiment": "Angry",
-  "needs_review": false
-}
-```
-
-### Interactive API Documentation
-
-- **Swagger UI**: http://localhost:8000/docs
-- **ReDoc**: http://localhost:8000/redoc
-
-### Run Tests
-
-```bash
-pytest tests/
-```
-
----
-
-## 🤖 Optional LLM Assist
-
-The system supports optional LLM-powered classification to enhance the rule-based baseline. This feature is entirely optional and falls back gracefully if not configured.
-
-### Supported Providers
-
-- **OpenAI** (GPT-4, GPT-3.5)
-- **Anthropic** (Claude)
-- **Azure OpenAI**
-
-### Configuration
-
-Set environment variables for your chosen provider:
-
-**OpenAI:**
-```bash
-export OPENAI_API_KEY="your-api-key-here"
-```
-
-**Anthropic:**
-```bash
-export ANTHROPIC_API_KEY="your-api-key-here"
-```
-
-**Azure OpenAI:**
-```bash
-export AZURE_OPENAI_KEY="your-key-here"
-export AZURE_OPENAI_ENDPOINT="your-endpoint-here"
-```
-
-### Usage Example
-
-```python
-from src.llm_assist import classify_with_llm
-from src.classifier import classify_complaint
-
-text = "I found unauthorized charges on my credit card!"
-
-# Try LLM-assisted classification (falls back gracefully if unavailable)
-llm_result = classify_with_llm(text, provider="openai")
-
-if llm_result:
-    print(f"LLM Classification: {llm_result}")
-else:
-    # Falls back to rule-based classifier
-    baseline_result = classify_complaint(text)
-    print(f"Rule-based Classification: {baseline_result}")
-```
-
-### Check LLM Status
-
-```python
-from src.llm_assist import get_llm_status
-
-status = get_llm_status()
-print(status)
-# {'openai': True, 'anthropic': False, 'azure': False}
-```
-
-### Important Notes
-
-⚠️ **No API keys are stored in the repository** - all credentials must be set as environment variables
-
-✅ **Graceful fallback** - If no LLM provider is configured, the system automatically uses the rule-based classifier
-
-🧪 **Unit tests mock LLM calls** - Tests do not require API keys or make actual LLM calls
-
-📊 **Current implementation is a safe stub** - Demonstrates the architecture without incurring API costs
 
 ---
 
