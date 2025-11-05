@@ -298,6 +298,26 @@ complaint-classifier/
 
 ---
 
+## 🔄 Reproduce Charts
+
+To regenerate all visualization charts from the classified data:
+
+```bash
+pip install -r requirements.txt
+make charts
+```
+
+This will:
+1. Install required dependencies (papermill, matplotlib, numpy, pandas)
+2. Execute the `notebooks/generate_charts.ipynb` notebook via papermill
+3. Generate all PNG charts in the `charts/` directory:
+   - `complaint_categories.png`
+   - `confidence_distribution.png`
+   - `routing_breakdown.png`
+   - `severity_distribution.png`
+
+---
+
 ## 📊 Sample Output
 
 ```json
