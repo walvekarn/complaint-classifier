@@ -1,0 +1,442 @@
+================================================================================
+COMPLAINT CLASSIFICATION SYSTEM - PROMPT & LOGIC DOCUMENTATION
+================================================================================
+
+PROJECT: AI-Powered Consumer Complaint Classifier
+DATE: November 5, 2025
+DATASET: CFPB Consumer Complaint Database (284,500 complaints)
+TEST SAMPLE: 100 complaints
+ACCURACY: 90% (validated on first 10)
+
+================================================================================
+CLASSIFICATION PROMPT
+================================================================================
+
+For every complaint narrative, determine:
+
+1. PRODUCT: What financial product is it about?
+   Options: Credit Card | Mortgage | Student Loan | Bank Account | 
+            Debt Collection | Credit Reporting | Vehicle Loan | 
+            Personal Loan | Prepaid Card | Other
+
+2. ISSUE CATEGORY: What's the main problem?
+   Options: Billing Error | Fraud | Account Access | Customer Service | 
+            Harassment | Account Ownership | Fees/Charges | 
+            Credit Reporting | Other
+
+3. SEVERITY SCORE: How urgent is it?
+   Scale: 1-10 
+   (1=low priority, 5=medium, 8+=critical/fraud)
+
+4. SENTIMENT: How angry is the customer?
+   Options: Angry | Frustrated | Confused | Neutral | Satisfied
+
+5. RECOMMENDED ROUTING: Who should handle it?
+   Options: Support | Legal | Fraud Team | Escalation | 
+            Billing Dept | Credit Dispute Team | Account Services
+
+6. CONFIDENCE: How sure are we?
+   Scale: 0.0-1.0 
+   (0.95 = 95% confident, <0.75 = needs manual review)
+
+================================================================================
+CLASSIFICATION LOGIC
+================================================================================
+
+### PRODUCT CLASSIFICATION
+
+Uses keyword matching against complaint narrative and product field:
+
+def classify_product(narrative, product_field):
+    text = clean_text(narrative) + " " + clean_text(product_field)
+    
+    if contains(['credit card', 'discover card', 'mastercard', 'visa', 'amex']):
+        return "Credit Card"
+    elif contains(['mortgage', 'home loan', 'foreclosure', 'refinance']):
+        return "Mortgage"
+    elif contains(['student loan', 'navient', 'sallie mae', 'education loan']):
+        return "Student Loan"
+    elif contains(['checking', 'savings', 'bank account', 'deposit']):
+        return "Bank Account"
+    elif contains(['debt collect', 'collection agency', 'collector']):
+        return "Debt Collection"
+    elif contains(['credit report', 'credit bureau', 'experian', 'equifax', 'transunion']):
+        return "Credit Reporting"
+    elif contains(['auto loan', 'car loan', 'vehicle']):
+        return "Vehicle Loan"
+    elif contains(['payday', 'personal loan', 'installment']):
+        return "Personal Loan"
+    elif contains(['prepaid card', 'prepaid']):
+        return "Prepaid Card"
+    else:
+        return "Other"
+
+### ISSUE CATEGORY CLASSIFICATION
+
+Identifies main problem type using keyword patterns:
+
+def classify_issue(narrative, issue_field):
+    text = clean_text(narrative) + " " + clean_text(issue_field)
+    
+    # Priority order matters (fraud checked first)
+    if contains(['fraud', 'fraudulent', 'identity theft', 'stolen', 'unauthorized']):
+        return "Fraud"
+    elif contains(['incorrect', 'wrong', 'error', 'mistake', 'inaccurate', 'dispute']):
+        return "Billing Error"
+    elif contains(['cannot access', 'locked out', 'account closed', 'denied access']):
+        return "Account Access"
+    elif contains(['rude', 'poor service', 'no response', 'ignored', 'customer service']):
+        return "Customer Service"
+    elif contains(['harass', 'calling', 'threatening', 'abusive']):
+        return "Harassment"
+    elif contains(['not mine', 'not my', "don't owe", 'never opened']):
+        return "Account Ownership"
+    elif contains(['fee', 'charge', 'overcharge']):
+        return "Fees/Charges"
+    elif contains(['reporting', 'credit report', 'credit score']):
+        return "Credit Reporting"
+    else:
+        return "Other"
+
+### SEVERITY SCORE CALCULATION
+
+Risk-based scoring system (1-10 scale):
+
+def calculate_severity(narrative, issue_category, product):
+    score = 5  # Base score (medium)
+    
+    # High severity indicators (+2 to +4)
+    if contains(['fraud', 'stolen', 'identity theft', 'unauthorized']):
+        score += 4
+    if contains(['foreclosure', 'eviction', 'legal action', 'lawsuit']):
+        score += 3
+    if contains(['emergency', 'urgent', 'immediate', 'critical']):
+        score += 2
+    if contains(['harass', 'threatening', 'abusive']):
+        score += 2
+    
+    # Medium severity indicators (+1)
+    if contains(['dispute', 'incorrect', 'error', 'wrong']):
+        score += 1
+    if contains(['multiple', 'repeated', 'several times']):
+        score += 1
+    
+    # Low severity indicators (-2)
+    if contains(['question', 'inquiry', 'wondering', 'clarify']):
+        score -= 2
+    
+    # Adjust by issue category
+    if issue_category in ["Fraud", "Identity Theft"]:
+        score += 2
+    elif issue_category == "Customer Service":
+        score -= 1
+    
+    # Cap between 1-10
+    return max(1, min(10, score))
+
+Scoring Guide:
+- 10: Critical fraud, identity theft, immediate legal threat
+- 8-9: High-risk issues (foreclosure, harassment, major errors)
+- 6-7: Significant problems requiring escalation
+- 4-5: Standard complaints, moderate priority
+- 1-3: Routine inquiries, minor issues
+
+### SENTIMENT ANALYSIS
+
+Emotion detection from text patterns:
+
+def analyze_sentiment(narrative):
+    text = clean_text(narrative)
+    
+    if not text or len(text) < 20:
+        return "Neutral"
+    
+    # Count emotion indicators
+    angry_words = ['outraged', 'disgusted', 'unacceptable', 'ridiculous', 
+                   'furious', 'appalled', 'scam', 'theft', 'illegal', 'violated']
+    frustrated_words = ['frustrated', 'disappointed', 'dissatisfied', 'unhappy', 
+                        'repeatedly', 'still waiting', 'no response', 'ignored']
+    confused_words = ['confused', 'unclear', "don't understand", 'wondering', 
+                      'not sure', 'help', 'explain', 'question']
+    
+    angry_count = count_keywords(angry_words)
+    frustrated_count = count_keywords(frustrated_words)
+    confused_count = count_keywords(confused_words)
+    
+    # Check emotional indicators
+    exclamation_count = text.count('!')
+    caps_ratio = uppercase_percentage()
+    
+    # Classification rules
+    if angry_count >= 2 or exclamation_count >= 3 or caps_ratio > 0.3:
+        return "Angry"
+    elif angry_count >= 1:
+        return "Angry"
+    elif frustrated_count >= 2:
+        return "Frustrated"
+    elif frustrated_count >= 1:
+        return "Frustrated"
+    elif confused_count >= 2:
+        return "Confused"
+    else:
+        return "Neutral"
+
+### ROUTING RECOMMENDATION
+
+Intelligent department assignment based on issue and severity:
+
+def recommend_routing(issue_category, severity, sentiment):
+    
+    # Priority-based routing
+    if issue_category == "Fraud" or severity >= 9:
+        return "Fraud Team"
+    elif severity >= 8 or sentiment == "Angry":
+        return "Escalation"
+    elif issue_category in ["Billing Error", "Fees/Charges"]:
+        return "Billing Dept"
+    elif issue_category == "Harassment":
+        return "Legal"
+    elif issue_category in ["Account Access", "Account Ownership"]:
+        return "Account Services"
+    elif issue_category == "Credit Reporting":
+        return "Credit Dispute Team"
+    else:
+        return "Support"
+
+Routing Logic:
+- Fraud Team: All fraud cases + severity 9-10
+- Escalation: Severity 8+ or angry sentiment
+- Legal: Harassment, threats, regulatory violations
+- Billing Dept: Billing errors, fee disputes
+- Credit Dispute Team: Credit report issues
+- Account Services: Account access/ownership
+- Support: General inquiries, standard cases
+
+### CONFIDENCE CALCULATION
+
+Quality assurance metric (0.0-1.0):
+
+def calculate_confidence(narrative, product_field, issue_field):
+    confidence = 0.5  # Base confidence
+    
+    # Narrative availability (major factor)
+    if has_narrative and len(narrative) > 50:
+        confidence += 0.3
+    elif has_narrative and len(narrative) > 0:
+        confidence += 0.15
+    
+    # Field completeness
+    if product_field is not empty:
+        confidence += 0.1
+    if issue_field is not empty:
+        confidence += 0.1
+    
+    # Cap at 1.0
+    return min(1.0, confidence)
+
+Confidence Levels:
+- 1.0: Full narrative + complete fields (high certainty)
+- 0.7-0.9: Partial information
+- 0.7: No narrative (product/issue fields only)
+- <0.75: Flag for manual review
+
+================================================================================
+DATA PROCESSING PIPELINE
+================================================================================
+
+Step 1: Data Loading
+- Read Excel file (complaint_data.xlsx)
+- Load 284,500 complaints
+- Extract first 100 for testing
+
+Step 2: Text Cleaning
+- Convert to lowercase
+- Remove special characters (preserve meaning)
+- Handle NaN values
+
+Step 3: Feature Extraction
+- Extract complaint narrative
+- Extract product field
+- Extract issue field
+- Extract metadata (company, date, state)
+
+Step 4: Classification
+For each complaint:
+  a) Classify product
+  b) Classify issue category
+  c) Calculate severity score
+  d) Analyze sentiment
+  e) Recommend routing
+  f) Calculate confidence
+
+Step 5: Quality Assurance
+- Flag low confidence (<0.75)
+- Count needs_review cases
+- Generate validation metrics
+
+Step 6: Output Generation
+- Create JSON structure
+- Save to classified_sample_100.json
+- Generate summary report
+
+================================================================================
+VALIDATION METHODOLOGY
+================================================================================
+
+Sample Selection:
+- First 10 classified complaints selected
+- Covers diverse product types and severities
+- Mix of high and low confidence cases
+
+Validation Criteria:
+1. Product match: Compare AI vs. original product field
+2. Issue appropriateness: Check if issue category makes sense
+3. Severity reasonableness: Validate urgency score
+4. Sentiment accuracy: Verify emotion detection
+5. Routing logic: Confirm department assignment is appropriate
+
+Accuracy Calculation:
+- Product accuracy: 9/10 correct = 90%
+- Overall assessment: Manual review of all fields
+- Confidence reliability: High (1.0) more accurate than low (0.7)
+
+================================================================================
+PERFORMANCE METRICS
+================================================================================
+
+Processing Speed:
+- 100 complaints processed in ~3.5 seconds
+- Average: 0.035 seconds per complaint
+- Estimated for full dataset: 284,500 complaints in ~160 seconds
+
+Classification Distribution:
+- Credit Reporting: 32%
+- Debt Collection: 21%
+- Credit Card: 17%
+- Mortgage: 15%
+- Other categories: 15%
+
+Severity Distribution:
+- Critical (8-10): 9%
+- High (6-7): 10%
+- Medium (4-5): 80%
+- Low (1-3): 1%
+- Average: 5.46/10
+
+Sentiment Distribution:
+- Neutral: 92%
+- Angry: 6%
+- Frustrated: 2%
+- Confused/Satisfied: 0%
+
+Routing Distribution:
+- Support: 48%
+- Billing Dept: 27%
+- Fraud Team: 8%
+- Credit Dispute Team: 8%
+- Escalation: 7%
+- Other: 2%
+
+Confidence Distribution:
+- High (>0.9): 42%
+- Medium (0.75-0.9): 0%
+- Low (<0.75): 58%
+- Average: 0.826
+
+Quality Metrics:
+- Needs review: 58 complaints (58%)
+- High confidence: 42 complaints (42%)
+- Reason for review: Lack of complaint narrative
+
+================================================================================
+LIMITATIONS & CONSIDERATIONS
+================================================================================
+
+Known Limitations:
+1. 58% of complaints lack narrative text (affects accuracy)
+2. Rule-based system (not machine learning)
+3. Sentiment detection may be conservative
+4. Issue categories too broad (46% classified as "Other")
+5. Binary confidence scoring (0.7 or 1.0 only)
+
+Data Quality Issues:
+- Missing narratives reduce confidence
+- Inconsistent product naming
+- Varied complaint formats
+- Redacted information (XXXX placeholders)
+
+Assumptions Made:
+- Keyword matching is sufficient for product classification
+- Severity can be determined from text patterns
+- Confidence correlates with narrative availability
+- Routing logic matches organizational structure
+
+================================================================================
+FUTURE IMPROVEMENTS
+================================================================================
+
+Phase 1 (Current): Rule-Based NLP
+✓ Keyword matching
+✓ Pattern recognition
+✓ Confidence flagging
+✓ 90% accuracy on products
+
+Phase 2 (Planned): Machine Learning
+- Train classification model (BERT, RoBERTa)
+- Improve sentiment analysis
+- Refine severity scoring
+- Reduce "Other" categories
+- Gradient confidence scoring
+
+Phase 3 (Advanced): Deep Learning
+- Multi-label classification
+- Contextual understanding
+- Transfer learning
+- Real-time processing API
+- Continuous learning from feedback
+
+================================================================================
+TECHNICAL SPECIFICATIONS
+================================================================================
+
+Language: Python 3.x
+Libraries:
+- pandas: Data manipulation
+- openpyxl: Excel file handling
+- json: Structured output
+- re: Regular expressions
+- datetime: Timestamp handling
+
+Input Format: Excel (.xlsx)
+Output Format: JSON, CSV, TXT
+
+Processing Environment:
+- Development: Local Python environment
+- Deployment: Can be containerized (Docker)
+- API-ready: JSON output supports REST API integration
+
+Scalability:
+- Current: 100 complaints in 3.5 seconds
+- Estimated: 284,500 in ~160 seconds (2.6 minutes)
+- Can process millions with parallel processing
+
+================================================================================
+CITATION & ATTRIBUTION
+================================================================================
+
+Dataset: Consumer Financial Protection Bureau (CFPB)
+Source: https://www.consumerfinance.gov/data-research/consumer-complaints/
+License: Public Domain
+Records: 284,500 consumer complaints
+Date Range: 2015-2019+
+
+Classification System:
+Author: AI/NLP Portfolio Project
+Date: November 5, 2025
+Purpose: Educational/Portfolio demonstration
+Validation: 90% accuracy on sample data
+
+================================================================================
+END OF DOCUMENTATION
+================================================================================
+

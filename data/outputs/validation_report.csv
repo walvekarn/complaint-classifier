@@ -1,0 +1,11 @@
+complaint_id,original_product,ai_product,original_issue,ai_issue_category,severity_score,sentiment,recommended_routing,confidence,needs_review,has_narrative,validation_status
+1509954,Credit reporting,Credit Reporting,Incorrect information on credit report,Billing Error,5,Neutral,Billing Dept,0.7,True,No,Pending
+1816726,Credit card,Credit Card,Billing disputes,Billing Error,7,Angry,Escalation,1.0,False,Yes,Pending
+2831821,"Credit reporting, credit repair services, or other personal consumer reports",Debt Collection,Incorrect information on your report,Billing Error,7,Angry,Escalation,1.0,False,Yes,Pending
+3114357,Debt collection,Debt Collection,Attempts to collect debt not owed,Account Ownership,5,Neutral,Account Services,1.0,False,Yes,Pending
+2107177,Bank account or service,Bank Account,"Account opening, closing, or management",Other,5,Neutral,Support,0.7,True,No,Pending
+2189912,Mortgage,Mortgage,"Loan modification,collection,foreclosure",Billing Error,10,Neutral,Fraud Team,1.0,False,Yes,Pending
+2414789,Debt collection,Debt Collection,False statements or representation,Other,5,Neutral,Support,0.7,True,No,Pending
+3119951,"Credit reporting, credit repair services, or other personal consumer reports",Credit Reporting,Incorrect information on your report,Billing Error,6,Neutral,Billing Dept,1.0,False,Yes,Pending
+2633496,Debt collection,Debt Collection,False statements or representation,Credit Reporting,10,Neutral,Fraud Team,1.0,False,Yes,Pending
+1786527,Credit card,Credit Card,Identity theft / Fraud / Embezzlement,Fraud,7,Neutral,Fraud Team,0.7,True,No,Pending

@@ -1,0 +1,1810 @@
+{
+  "metadata": {
+    "total_complaints": 100,
+    "processing_date": "2025-11-05T08:02:10.405252",
+    "needs_review_count": 58,
+    "needs_review_percentage": 58.0
+  },
+  "complaints": [
+    {
+      "complaint_id": 1509954,
+      "classification": {
+        "product": "Credit Reporting",
+        "issue_category": "Billing Error",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Billing Dept",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2015-09-08 00:00:00",
+        "company": "Experian Information Solutions Inc.",
+        "state": "NJ",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 1816726,
+      "classification": {
+        "product": "Credit Card",
+        "issue_category": "Billing Error",
+        "severity_score": 7,
+        "sentiment": "Angry",
+        "recommended_routing": "Escalation",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2016-04-03 00:00:00",
+        "company": "DISCOVER BANK",
+        "state": "NV",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 2831821,
+      "classification": {
+        "product": "Debt Collection",
+        "issue_category": "Billing Error",
+        "severity_score": 7,
+        "sentiment": "Angry",
+        "recommended_routing": "Escalation",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2018-03-03 00:00:00",
+        "company": "TRANSUNION INTERMEDIATE HOLDINGS, INC.",
+        "state": "VA",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 3114357,
+      "classification": {
+        "product": "Debt Collection",
+        "issue_category": "Account Ownership",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Account Services",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2019-02-01 00:00:00",
+        "company": "Cascade Capital, LLC",
+        "state": "FL",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 2107177,
+      "classification": {
+        "product": "Bank Account",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2016-12-09 00:00:00",
+        "company": "BANCO POPULAR DE PUERTO RICO",
+        "state": "PR",
+        "submitted_via": "Phone"
+      }
+    },
+    {
+      "complaint_id": 2189912,
+      "classification": {
+        "product": "Mortgage",
+        "issue_category": "Billing Error",
+        "severity_score": 10,
+        "sentiment": "Neutral",
+        "recommended_routing": "Fraud Team",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2016-01-11 00:00:00",
+        "company": "CARRINGTON MORTGAGE SERVICES, LLC",
+        "state": "ND",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 2414789,
+      "classification": {
+        "product": "Debt Collection",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2017-01-04 00:00:00",
+        "company": "WINN LAW GROUP, APC",
+        "state": "CA",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 3119951,
+      "classification": {
+        "product": "Credit Reporting",
+        "issue_category": "Billing Error",
+        "severity_score": 6,
+        "sentiment": "Neutral",
+        "recommended_routing": "Billing Dept",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2019-08-01 00:00:00",
+        "company": "Experian Information Solutions Inc.",
+        "state": "IL",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 2633496,
+      "classification": {
+        "product": "Debt Collection",
+        "issue_category": "Credit Reporting",
+        "severity_score": 10,
+        "sentiment": "Neutral",
+        "recommended_routing": "Fraud Team",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2017-11-08 00:00:00",
+        "company": "Law Office of Harris & Zide",
+        "state": "CA",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 1786527,
+      "classification": {
+        "product": "Credit Card",
+        "issue_category": "Fraud",
+        "severity_score": 7,
+        "sentiment": "Neutral",
+        "recommended_routing": "Fraud Team",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2016-12-02 00:00:00",
+        "company": "CITIBANK, N.A.",
+        "state": "NY",
+        "submitted_via": "Referral"
+      }
+    },
+    {
+      "complaint_id": 2332784,
+      "classification": {
+        "product": "Credit Reporting",
+        "issue_category": "Billing Error",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Billing Dept",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2017-07-02 00:00:00",
+        "company": "Experian Information Solutions Inc.",
+        "state": "CT",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 3017638,
+      "classification": {
+        "product": "Credit Reporting",
+        "issue_category": "Billing Error",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Billing Dept",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2018-12-09 00:00:00",
+        "company": "TRANSUNION INTERMEDIATE HOLDINGS, INC.",
+        "state": "TX",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 2957182,
+      "classification": {
+        "product": "Mortgage",
+        "issue_category": "Customer Service",
+        "severity_score": 4,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2018-09-07 00:00:00",
+        "company": "SUNTRUST BANKS, INC.",
+        "state": "TX",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 3114228,
+      "classification": {
+        "product": "Debt Collection",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2019-02-01 00:00:00",
+        "company": "Resurgent Capital Services L.P.",
+        "state": "PA",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 2339725,
+      "classification": {
+        "product": "Credit Reporting",
+        "issue_category": "Billing Error",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Billing Dept",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2017-11-02 00:00:00",
+        "company": "TRANSUNION INTERMEDIATE HOLDINGS, INC.",
+        "state": "CA",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 1910453,
+      "classification": {
+        "product": "Mortgage",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2016-04-05 00:00:00",
+        "company": "JPMORGAN CHASE & CO.",
+        "state": "TX",
+        "submitted_via": "Referral"
+      }
+    },
+    {
+      "complaint_id": 1591949,
+      "classification": {
+        "product": "Credit Card",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2015-04-10 00:00:00",
+        "company": "JPMORGAN CHASE & CO.",
+        "state": "FL",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 1590204,
+      "classification": {
+        "product": "Bank Account",
+        "issue_category": "Fees/Charges",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Billing Dept",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2015-02-10 00:00:00",
+        "company": "PNC Bank N.A.",
+        "state": "PA",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 2718472,
+      "classification": {
+        "product": "Credit Reporting",
+        "issue_category": "Billing Error",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Billing Dept",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2017-02-11 00:00:00",
+        "company": "TRANSUNION INTERMEDIATE HOLDINGS, INC.",
+        "state": "IL",
+        "submitted_via": "Referral"
+      }
+    },
+    {
+      "complaint_id": 3205882,
+      "classification": {
+        "product": "Credit Reporting",
+        "issue_category": "Billing Error",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Billing Dept",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2019-09-04 00:00:00",
+        "company": "TRANSUNION INTERMEDIATE HOLDINGS, INC.",
+        "state": "FL",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 3038345,
+      "classification": {
+        "product": "Mortgage",
+        "issue_category": "Harassment",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Legal",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2018-05-10 00:00:00",
+        "company": "NATIONSTAR MORTGAGE",
+        "state": "CA",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 2482515,
+      "classification": {
+        "product": "Credit Reporting",
+        "issue_category": "Billing Error",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Billing Dept",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2017-11-05 00:00:00",
+        "company": "EQUIFAX, INC.",
+        "state": "SC",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 3391443,
+      "classification": {
+        "product": "Credit Reporting",
+        "issue_category": "Billing Error",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Billing Dept",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2019-01-10 00:00:00",
+        "company": "WELLS FARGO & COMPANY",
+        "state": "DE",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 2105595,
+      "classification": {
+        "product": "Debt Collection",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2016-11-09 00:00:00",
+        "company": "Mountain Land Collections, Inc.",
+        "state": "UT",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 1825530,
+      "classification": {
+        "product": "Debt Collection",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2016-10-03 00:00:00",
+        "company": "Diversified Consultants, Inc.",
+        "state": "KY",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 1775306,
+      "classification": {
+        "product": "Student Loan",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2016-05-02 00:00:00",
+        "company": "Navient Solutions, LLC.",
+        "state": "NY",
+        "submitted_via": "Referral"
+      }
+    },
+    {
+      "complaint_id": 1874131,
+      "classification": {
+        "product": "Credit Card",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2016-12-04 00:00:00",
+        "company": "SYNCHRONY FINANCIAL",
+        "state": "IN",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 2668283,
+      "classification": {
+        "product": "Credit Reporting",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2017-09-09 00:00:00",
+        "company": "EQUIFAX, INC.",
+        "state": "NC",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 2837247,
+      "classification": {
+        "product": "Credit Card",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2018-08-03 00:00:00",
+        "company": "JPMORGAN CHASE & CO.",
+        "state": "CA",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 1359670,
+      "classification": {
+        "product": "Bank Account",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2015-04-05 00:00:00",
+        "company": "JPMORGAN CHASE & CO.",
+        "state": "FL",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 1871797,
+      "classification": {
+        "product": "Credit Reporting",
+        "issue_category": "Credit Reporting",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Credit Dispute Team",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2016-08-04 00:00:00",
+        "company": "EQUIFAX, INC.",
+        "state": "nan",
+        "submitted_via": "Phone"
+      }
+    },
+    {
+      "complaint_id": 2659685,
+      "classification": {
+        "product": "Credit Reporting",
+        "issue_category": "Billing Error",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Billing Dept",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2017-06-09 00:00:00",
+        "company": "EQUIFAX, INC.",
+        "state": "GA",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 3094285,
+      "classification": {
+        "product": "Debt Collection",
+        "issue_category": "Credit Reporting",
+        "severity_score": 6,
+        "sentiment": "Neutral",
+        "recommended_routing": "Credit Dispute Team",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2018-07-12 00:00:00",
+        "company": "EQUIFAX, INC.",
+        "state": "FL",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 2900424,
+      "classification": {
+        "product": "Mortgage",
+        "issue_category": "Billing Error",
+        "severity_score": 6,
+        "sentiment": "Neutral",
+        "recommended_routing": "Billing Dept",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2018-08-05 00:00:00",
+        "company": "SELECT PORTFOLIO SERVICING, INC.",
+        "state": "MI",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 2901266,
+      "classification": {
+        "product": "Bank Account",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2018-09-05 00:00:00",
+        "company": "HUNTINGTON NATIONAL BANK, THE",
+        "state": "nan",
+        "submitted_via": "Phone"
+      }
+    },
+    {
+      "complaint_id": 3268826,
+      "classification": {
+        "product": "Debt Collection",
+        "issue_category": "Billing Error",
+        "severity_score": 4,
+        "sentiment": "Neutral",
+        "recommended_routing": "Billing Dept",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2019-09-06 00:00:00",
+        "company": "NRA Group, LLC",
+        "state": "NY",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 1812407,
+      "classification": {
+        "product": "Debt Collection",
+        "issue_category": "Billing Error",
+        "severity_score": 4,
+        "sentiment": "Frustrated",
+        "recommended_routing": "Billing Dept",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2016-03-03 00:00:00",
+        "company": "Renton Collections Inc.",
+        "state": "WA",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 2866340,
+      "classification": {
+        "product": "Credit Reporting",
+        "issue_category": "Credit Reporting",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Credit Dispute Team",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2018-06-04 00:00:00",
+        "company": "TRANSUNION INTERMEDIATE HOLDINGS, INC.",
+        "state": "GA",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 2287265,
+      "classification": {
+        "product": "Credit Reporting",
+        "issue_category": "Fraud",
+        "severity_score": 10,
+        "sentiment": "Neutral",
+        "recommended_routing": "Fraud Team",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2017-12-01 00:00:00",
+        "company": "TRANSUNION INTERMEDIATE HOLDINGS, INC.",
+        "state": "TX",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 2045488,
+      "classification": {
+        "product": "Bank Account",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2016-03-08 00:00:00",
+        "company": "WELLS FARGO & COMPANY",
+        "state": "NJ",
+        "submitted_via": "Phone"
+      }
+    },
+    {
+      "complaint_id": 2691587,
+      "classification": {
+        "product": "Bank Account",
+        "issue_category": "Fees/Charges",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Billing Dept",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2017-03-10 00:00:00",
+        "company": "CITIBANK, N.A.",
+        "state": "NY",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 1823951,
+      "classification": {
+        "product": "Credit Reporting",
+        "issue_category": "Credit Reporting",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Credit Dispute Team",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2016-09-03 00:00:00",
+        "company": "TRANSUNION INTERMEDIATE HOLDINGS, INC.",
+        "state": "FL",
+        "submitted_via": "Postal mail"
+      }
+    },
+    {
+      "complaint_id": 3142971,
+      "classification": {
+        "product": "Credit Reporting",
+        "issue_category": "Credit Reporting",
+        "severity_score": 3,
+        "sentiment": "Neutral",
+        "recommended_routing": "Credit Dispute Team",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2019-05-02 00:00:00",
+        "company": "BANK OF AMERICA, NATIONAL ASSOCIATION",
+        "state": "NC",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 1232698,
+      "classification": {
+        "product": "Student Loan",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2015-10-02 00:00:00",
+        "company": "Navient Solutions, LLC.",
+        "state": "MO",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 3262600,
+      "classification": {
+        "product": "Credit Card",
+        "issue_category": "Billing Error",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Billing Dept",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2019-03-06 00:00:00",
+        "company": "Experian Information Solutions Inc.",
+        "state": "CA",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 2197463,
+      "classification": {
+        "product": "Mortgage",
+        "issue_category": "Fraud",
+        "severity_score": 10,
+        "sentiment": "Neutral",
+        "recommended_routing": "Fraud Team",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2016-08-11 00:00:00",
+        "company": "NATIONSTAR MORTGAGE",
+        "state": "SC",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 2285300,
+      "classification": {
+        "product": "Credit Card",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2017-11-01 00:00:00",
+        "company": "WELLS FARGO & COMPANY",
+        "state": "CA",
+        "submitted_via": "Referral"
+      }
+    },
+    {
+      "complaint_id": 1413425,
+      "classification": {
+        "product": "Debt Collection",
+        "issue_category": "Credit Reporting",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Credit Dispute Team",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2015-09-06 00:00:00",
+        "company": "CAPITAL ONE FINANCIAL CORPORATION",
+        "state": "NY",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 3459121,
+      "classification": {
+        "product": "Credit Card",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2019-05-12 00:00:00",
+        "company": "JPMORGAN CHASE & CO.",
+        "state": "CA",
+        "submitted_via": "Phone"
+      }
+    },
+    {
+      "complaint_id": 2806801,
+      "classification": {
+        "product": "Mortgage",
+        "issue_category": "Other",
+        "severity_score": 8,
+        "sentiment": "Neutral",
+        "recommended_routing": "Escalation",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2018-07-02 00:00:00",
+        "company": "JPMORGAN CHASE & CO.",
+        "state": "NY",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 2190032,
+      "classification": {
+        "product": "Credit Card",
+        "issue_category": "Customer Service",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2016-02-11 00:00:00",
+        "company": "SYNCHRONY FINANCIAL",
+        "state": "NJ",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 2802945,
+      "classification": {
+        "product": "Credit Reporting",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2018-03-02 00:00:00",
+        "company": "BUCKEYE FINANCIAL SERVICES OF ALLIANCE INC.",
+        "state": "NJ",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 2105575,
+      "classification": {
+        "product": "Credit Card",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2016-11-09 00:00:00",
+        "company": "JPMORGAN CHASE & CO.",
+        "state": "NJ",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 2751465,
+      "classification": {
+        "product": "Credit Card",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2017-11-12 00:00:00",
+        "company": "UNITED SERVICES AUTOMOBILE ASSOCIATION",
+        "state": "LA",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 2952614,
+      "classification": {
+        "product": "Credit Reporting",
+        "issue_category": "Billing Error",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Billing Dept",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2018-03-07 00:00:00",
+        "company": "Experian Information Solutions Inc.",
+        "state": "CA",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 3041494,
+      "classification": {
+        "product": "Credit Card",
+        "issue_category": "Billing Error",
+        "severity_score": 6,
+        "sentiment": "Angry",
+        "recommended_routing": "Escalation",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2018-09-10 00:00:00",
+        "company": "CAPITAL ONE FINANCIAL CORPORATION",
+        "state": "NC",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 1548985,
+      "classification": {
+        "product": "Debt Collection",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2015-02-09 00:00:00",
+        "company": "PORTFOLIO RECOVERY ASSOCIATES INC",
+        "state": "FL",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 2778260,
+      "classification": {
+        "product": "Mortgage",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2018-10-01 00:00:00",
+        "company": "BANK OF AMERICA, NATIONAL ASSOCIATION",
+        "state": "CA",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 2369124,
+      "classification": {
+        "product": "Debt Collection",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2017-03-03 00:00:00",
+        "company": "Security Credit Services, LLC",
+        "state": "VA",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 3070055,
+      "classification": {
+        "product": "Student Loan",
+        "issue_category": "Customer Service",
+        "severity_score": 4,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2018-09-11 00:00:00",
+        "company": "AES/PHEAA",
+        "state": "DC",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 1509688,
+      "classification": {
+        "product": "Debt Collection",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2015-08-08 00:00:00",
+        "company": "RevMD Partners, LLC.",
+        "state": "GA",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 2807096,
+      "classification": {
+        "product": "Credit Reporting",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Angry",
+        "recommended_routing": "Escalation",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2018-08-02 00:00:00",
+        "company": "CITIBANK, N.A.",
+        "state": "TX",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 3095494,
+      "classification": {
+        "product": "Credit Reporting",
+        "issue_category": "Credit Reporting",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Credit Dispute Team",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2018-09-12 00:00:00",
+        "company": "Experian Information Solutions Inc.",
+        "state": "LA",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 1446452,
+      "classification": {
+        "product": "Mortgage",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2015-01-07 00:00:00",
+        "company": "BANK OF AMERICA, NATIONAL ASSOCIATION",
+        "state": "NJ",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 1998365,
+      "classification": {
+        "product": "Mortgage",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2016-05-07 00:00:00",
+        "company": "JPMORGAN CHASE & CO.",
+        "state": "TX",
+        "submitted_via": "Referral"
+      }
+    },
+    {
+      "complaint_id": 1861875,
+      "classification": {
+        "product": "Credit Reporting",
+        "issue_category": "Billing Error",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Billing Dept",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2016-02-04 00:00:00",
+        "company": "EQUIFAX, INC.",
+        "state": "PA",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 1915315,
+      "classification": {
+        "product": "Credit Reporting",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2016-09-05 00:00:00",
+        "company": "TRANSUNION INTERMEDIATE HOLDINGS, INC.",
+        "state": "KS",
+        "submitted_via": "Postal mail"
+      }
+    },
+    {
+      "complaint_id": 3093228,
+      "classification": {
+        "product": "Bank Account",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2018-06-12 00:00:00",
+        "company": "NAVY FEDERAL CREDIT UNION",
+        "state": "VT",
+        "submitted_via": "Referral"
+      }
+    },
+    {
+      "complaint_id": 2896899,
+      "classification": {
+        "product": "Credit Card",
+        "issue_category": "Fraud",
+        "severity_score": 10,
+        "sentiment": "Neutral",
+        "recommended_routing": "Fraud Team",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2018-04-05 00:00:00",
+        "company": "Conn's, Inc.",
+        "state": "TX",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 3044945,
+      "classification": {
+        "product": "Debt Collection",
+        "issue_category": "Billing Error",
+        "severity_score": 7,
+        "sentiment": "Neutral",
+        "recommended_routing": "Billing Dept",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2018-12-10 00:00:00",
+        "company": "U.S. Collections West, Inc.",
+        "state": "AZ",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 2779992,
+      "classification": {
+        "product": "Credit Reporting",
+        "issue_category": "Billing Error",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Billing Dept",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2018-12-01 00:00:00",
+        "company": "UNITED SERVICES AUTOMOBILE ASSOCIATION",
+        "state": "TX",
+        "submitted_via": "Fax"
+      }
+    },
+    {
+      "complaint_id": 1640958,
+      "classification": {
+        "product": "Credit Card",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2015-05-11 00:00:00",
+        "company": "CAPITAL ONE FINANCIAL CORPORATION",
+        "state": "FL",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 2906493,
+      "classification": {
+        "product": "Mortgage",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2018-06-04 00:00:00",
+        "company": "WELLS FARGO & COMPANY",
+        "state": "AZ",
+        "submitted_via": "Referral"
+      }
+    },
+    {
+      "complaint_id": 1419403,
+      "classification": {
+        "product": "Mortgage",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2015-12-06 00:00:00",
+        "company": "ARVEST BANK GROUP, INC.",
+        "state": "FL",
+        "submitted_via": "Postal mail"
+      }
+    },
+    {
+      "complaint_id": 1549273,
+      "classification": {
+        "product": "Credit Reporting",
+        "issue_category": "Billing Error",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Billing Dept",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2015-02-09 00:00:00",
+        "company": "EQUIFAX, INC.",
+        "state": "NC",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 3015141,
+      "classification": {
+        "product": "Student Loan",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2018-10-09 00:00:00",
+        "company": "AES/PHEAA",
+        "state": "KY",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 2690035,
+      "classification": {
+        "product": "Credit Reporting",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2017-02-10 00:00:00",
+        "company": "TRANSUNION INTERMEDIATE HOLDINGS, INC.",
+        "state": "LA",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 2870480,
+      "classification": {
+        "product": "Credit Reporting",
+        "issue_category": "Credit Reporting",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Credit Dispute Team",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2018-10-04 00:00:00",
+        "company": "TRANSUNION INTERMEDIATE HOLDINGS, INC.",
+        "state": "AZ",
+        "submitted_via": "Fax"
+      }
+    },
+    {
+      "complaint_id": 2802250,
+      "classification": {
+        "product": "Student Loan",
+        "issue_category": "Other",
+        "severity_score": 6,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2018-02-02 00:00:00",
+        "company": "FMS Inc.",
+        "state": "WA",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 1446998,
+      "classification": {
+        "product": "Debt Collection",
+        "issue_category": "Billing Error",
+        "severity_score": 6,
+        "sentiment": "Neutral",
+        "recommended_routing": "Billing Dept",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2015-01-07 00:00:00",
+        "company": "EQUIFAX, INC.",
+        "state": "IN",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 3262846,
+      "classification": {
+        "product": "Bank Account",
+        "issue_category": "Fraud",
+        "severity_score": 10,
+        "sentiment": "Neutral",
+        "recommended_routing": "Fraud Team",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2019-03-06 00:00:00",
+        "company": "M&T BANK CORPORATION",
+        "state": "VA",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 1905626,
+      "classification": {
+        "product": "Debt Collection",
+        "issue_category": "Billing Error",
+        "severity_score": 8,
+        "sentiment": "Neutral",
+        "recommended_routing": "Escalation",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2016-02-05 00:00:00",
+        "company": "Stellar Recovery, Inc.",
+        "state": "GA",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 3462569,
+      "classification": {
+        "product": "Debt Collection",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2019-09-12 00:00:00",
+        "company": "Aargon Agency, Inc.",
+        "state": "MS",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 2153311,
+      "classification": {
+        "product": "Credit Card",
+        "issue_category": "Harassment",
+        "severity_score": 9,
+        "sentiment": "Angry",
+        "recommended_routing": "Fraud Team",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2016-10-10 00:00:00",
+        "company": "BANK OF AMERICA, NATIONAL ASSOCIATION",
+        "state": "CA",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 3327039,
+      "classification": {
+        "product": "Credit Reporting",
+        "issue_category": "Billing Error",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Billing Dept",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2019-01-08 00:00:00",
+        "company": "TRANSUNION INTERMEDIATE HOLDINGS, INC.",
+        "state": "NC",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 1183022,
+      "classification": {
+        "product": "Bank Account",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2015-06-01 00:00:00",
+        "company": "TD BANK US HOLDING COMPANY",
+        "state": "PA",
+        "submitted_via": "Phone"
+      }
+    },
+    {
+      "complaint_id": 1827342,
+      "classification": {
+        "product": "Other",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2016-10-03 00:00:00",
+        "company": "Go Capital Holdings, LLC",
+        "state": "GA",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 2277796,
+      "classification": {
+        "product": "Mortgage",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2017-06-01 00:00:00",
+        "company": "WELLS FARGO & COMPANY",
+        "state": "CT",
+        "submitted_via": "Referral"
+      }
+    },
+    {
+      "complaint_id": 3368613,
+      "classification": {
+        "product": "Debt Collection",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2019-10-09 00:00:00",
+        "company": "I.Q. DATA INTERNATIONAL, INC.",
+        "state": "CA",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 1810506,
+      "classification": {
+        "product": "Credit Card",
+        "issue_category": "Customer Service",
+        "severity_score": 4,
+        "sentiment": "Frustrated",
+        "recommended_routing": "Support",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2016-01-03 00:00:00",
+        "company": "JPMORGAN CHASE & CO.",
+        "state": "OH",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 2286644,
+      "classification": {
+        "product": "Debt Collection",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2017-12-01 00:00:00",
+        "company": "Nationwide Debt Management Solutions, LLC",
+        "state": "IN",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 2982537,
+      "classification": {
+        "product": "Debt Collection",
+        "issue_category": "Customer Service",
+        "severity_score": 4,
+        "sentiment": "Angry",
+        "recommended_routing": "Escalation",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2018-05-08 00:00:00",
+        "company": "TRANSWORLD SYSTEMS INC",
+        "state": "TX",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 2477875,
+      "classification": {
+        "product": "Credit Card",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2017-07-05 00:00:00",
+        "company": "CAPITAL ONE FINANCIAL CORPORATION",
+        "state": "TN",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 2661979,
+      "classification": {
+        "product": "Credit Reporting",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 1.0
+      },
+      "needs_review": false,
+      "original_data": {
+        "date_received": "2017-09-09 00:00:00",
+        "company": "EQUIFAX, INC.",
+        "state": "MN",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 3064364,
+      "classification": {
+        "product": "Credit Reporting",
+        "issue_category": "Billing Error",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Billing Dept",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2018-02-11 00:00:00",
+        "company": "EQUIFAX, INC.",
+        "state": "FL",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 2046262,
+      "classification": {
+        "product": "Credit Reporting",
+        "issue_category": "Billing Error",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Billing Dept",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2016-04-08 00:00:00",
+        "company": "EQUIFAX, INC.",
+        "state": "IL",
+        "submitted_via": "Fax"
+      }
+    },
+    {
+      "complaint_id": 3326971,
+      "classification": {
+        "product": "Credit Reporting",
+        "issue_category": "Billing Error",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Billing Dept",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2019-02-08 00:00:00",
+        "company": "TRANSUNION INTERMEDIATE HOLDINGS, INC.",
+        "state": "FL",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 2430116,
+      "classification": {
+        "product": "Mortgage",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2017-11-04 00:00:00",
+        "company": "Lima One Capital, LLC",
+        "state": "FL",
+        "submitted_via": "Web"
+      }
+    },
+    {
+      "complaint_id": 1459686,
+      "classification": {
+        "product": "Mortgage",
+        "issue_category": "Other",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Support",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2015-09-07 00:00:00",
+        "company": "BANK OF AMERICA, NATIONAL ASSOCIATION",
+        "state": "NY",
+        "submitted_via": "Referral"
+      }
+    },
+    {
+      "complaint_id": 1731512,
+      "classification": {
+        "product": "Credit Reporting",
+        "issue_category": "Billing Error",
+        "severity_score": 5,
+        "sentiment": "Neutral",
+        "recommended_routing": "Billing Dept",
+        "confidence": 0.7
+      },
+      "needs_review": true,
+      "original_data": {
+        "date_received": "2016-07-01 00:00:00",
+        "company": "The CBE Group, Inc.",
+        "state": "VA",
+        "submitted_via": "Web"
+      }
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                   CLASSIFICATION METRICS SUMMARY (100 Complaints)            ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+DATASET: First 100 complaints from complaint_data.xlsx
+
+════════════════════════════════════════════════════════════════════════════════
+1. PRODUCT DISTRIBUTION
+════════════════════════════════════════════════════════════════════════════════
+
+   Credit Reporting .... 32 complaints (32.0%)
+   Debt Collection ..... 21 complaints (21.0%)
+   Credit Card ......... 17 complaints (17.0%)
+   Mortgage ............ 15 complaints (15.0%)
+   Bank Account ........ 9 complaints (9.0%)
+   Student Loan ........ 5 complaints (5.0%)
+   Other ............... 1 complaint (1.0%)
+
+════════════════════════════════════════════════════════════════════════════════
+2. SEVERITY SCORE DISTRIBUTION
+════════════════════════════════════════════════════════════════════════════════
+
+   CRITICAL (8-10): 9 complaints (9.0%) 🚨
+     • Score 10: 6 complaints
+     • Score 9:  1 complaint
+     • Score 8:  2 complaints
+   
+   HIGH (6-7): 10 complaints (10.0%) ⚠️
+     • Score 7:  4 complaints
+     • Score 6:  6 complaints
+   
+   MEDIUM (4-5): 80 complaints (80.0%) ⚡
+     • Score 5: 74 complaints
+     • Score 4:  6 complaints
+   
+   LOW (1-3): 1 complaint (1.0%) ℹ️
+     • Score 3:  1 complaint
+   
+   Average Severity: 5.46/10
+
+════════════════════════════════════════════════════════════════════════════════
+3. ROUTING TO ESCALATION
+════════════════════════════════════════════════════════════════════════════════
+
+   Escalation Team ...... 7 complaints (7.0%)
+   Other routing ........ 93 complaints (93.0%)
+   
+   All Routing Destinations:
+     • Support ................ 48 complaints (48.0%)
+     • Billing Dept ........... 27 complaints (27.0%)
+     • Fraud Team ............. 8 complaints (8.0%)
+     • Credit Dispute Team .... 8 complaints (8.0%)
+     • Escalation ............. 7 complaints (7.0%)
+     • Account Services ....... 1 complaint (1.0%)
+     • Legal .................. 1 complaint (1.0%)
+
+════════════════════════════════════════════════════════════════════════════════
+4. CONFIDENCE SCORES
+════════════════════════════════════════════════════════════════════════════════
+
+   High confidence (>0.9): 42 complaints (42.0%) ✓
+   
+   Medium confidence (0.75-0.9): 0 complaints (0.0%)
+   
+   Low confidence (<0.75): 58 complaints (58.0%) ⚠️
+   
+   Distribution:
+     • 1.00 confidence: 42 complaints (all with narratives)
+     • 0.70 confidence: 58 complaints (no narratives)
+   
+   Average confidence: 0.826
+   Min confidence: 0.70
+   Max confidence: 1.00
+   
+   KEY INSIGHT: Binary distribution - complaints either have full
+                narrative (1.0 confidence) or no narrative (0.7 confidence)
+
+════════════════════════════════════════════════════════════════════════════════
+5. SENTIMENT ANALYSIS
+════════════════════════════════════════════════════════════════════════════════
+
+   Neutral ............ 92 complaints (92.0%)
+   Angry .............. 6 complaints (6.0%)
+   Frustrated ......... 2 complaints (2.0%)
+   Confused ........... 0 complaints (0.0%)
+   Satisfied .......... 0 complaints (0.0%)
+
+════════════════════════════════════════════════════════════════════════════════
+6. KEY OBSERVATIONS
+════════════════════════════════════════════════════════════════════════════════
+
+✓ STRENGTHS:
+  • Product classification appears accurate (matches original field)
+  • Fraud detection working (identifies fraud keywords correctly)
+  • High confidence correlates with narrative availability
+  • Routing logic follows severity appropriately
+
+⚠️ AREAS FOR IMPROVEMENT:
+  • 58% of complaints lack narratives (limiting accuracy)
+  • Sentiment detection may be conservative (92% neutral)
+  • Issue categorization may need refinement (46% "Other")
+  • Severity scoring needs validation (is 5.46 avg appropriate?)
+
+🎯 RECOMMENDATIONS:
+  1. Manual review of "Other" issue categories to improve classification
+  2. Enhance sentiment analysis to catch subtle frustration
+  3. Validate severity scoring with domain experts
+  4. Consider alternative confidence calculation for no-narrative cases
+  5. Test classification on complaints with full narratives only
+
