@@ -318,6 +318,54 @@ This will:
 
 ---
 
+## 🚀 Run the API
+
+To start the FastAPI server:
+
+```bash
+pip install -r requirements.txt
+uvicorn src.app:app --reload
+```
+
+The API will be available at `http://localhost:8000` with:
+- **Interactive docs**: http://localhost:8000/docs
+- **Alternative docs**: http://localhost:8000/redoc
+- **Health check**: `GET /health`
+- **Classification**: `POST /classify`
+
+### Example API Usage
+
+```bash
+# Health check
+curl http://localhost:8000/health
+
+# Classify a complaint
+curl -X POST http://localhost:8000/classify \
+  -H "Content-Type: application/json" \
+  -d '{"text": "I found unauthorized charges on my credit card. This is fraud!"}'
+```
+
+**Response:**
+```json
+{
+  "category": "Credit Card",
+  "confidence": 0.95,
+  "severity": 9,
+  "route": "Fraud Team",
+  "issue_category": "Fraud",
+  "sentiment": "Angry",
+  "needs_review": false
+}
+```
+
+### Run Tests
+
+```bash
+pytest tests/test_app.py -v
+```
+
+---
+
 ## 📊 Sample Output
 
 ```json
