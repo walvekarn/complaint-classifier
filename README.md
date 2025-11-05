@@ -369,5 +369,47 @@ Dataset: CFPB Consumer Complaint Database (284,500 complaints)
 
 ---
 
+## 🏗️ Architecture
+
+```mermaid
+graph TD
+    A[Raw Complaint Data<br/>284K+ complaints] --> B[Data Preprocessing<br/>Text Cleaning & Normalization]
+    B --> C[Feature Extraction<br/>Keywords & Patterns]
+    C --> D[NLP Classification Engine]
+    
+    D --> E[Product Classifier<br/>Credit Card, Mortgage, etc.]
+    D --> F[Issue Categorizer<br/>Fraud, Billing Error, etc.]
+    D --> G[Severity Scorer<br/>1-10 Risk Assessment]
+    D --> H[Sentiment Analyzer<br/>Angry, Frustrated, Neutral]
+    
+    E --> I[Routing Logic]
+    F --> I
+    G --> I
+    H --> I
+    
+    I --> J[Confidence Calculator<br/>0.0-1.0 Score]
+    J --> K{Confidence > 0.75?}
+    
+    K -->|Yes| L[Auto-Route to Department<br/>Support/Legal/Fraud/Escalation]
+    K -->|No| M[Flag for Manual Review]
+    
+    L --> N[JSON Output<br/>Structured Classification]
+    M --> N
+    
+    style A fill:#e1f5ff
+    style D fill:#fff4e1
+    style I fill:#ffe1f5
+    style N fill:#e1ffe1
+```
+
+**System Components:**
+- **Input Layer**: Excel/CSV data ingestion
+- **Processing Layer**: Text cleaning, keyword extraction, pattern matching
+- **Classification Layer**: Multi-dimensional categorization (product, issue, severity, sentiment)
+- **Decision Layer**: Intelligent routing based on classification results
+- **Output Layer**: Structured JSON with confidence scores and review flags
+
+---
+
 **Built with Python • Powered by NLP • Validated on Real Data**
 
