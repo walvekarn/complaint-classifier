@@ -486,5 +486,58 @@ The chart generation notebook is located at `notebooks/generate_charts.ipynb` an
 
 ---
 
+## 🚀 API Usage
+
+The project includes a FastAPI-based REST API for real-time complaint classification.
+
+### Start the API Server
+
+```bash
+pip install -r requirements.txt
+uvicorn src.app:app --reload
+```
+
+The API will be available at `http://localhost:8000`
+
+### API Endpoints
+
+**Health Check:**
+```bash
+curl http://localhost:8000/health
+```
+
+**Classify a Complaint:**
+```bash
+curl -X POST http://localhost:8000/classify \
+  -H "Content-Type: application/json" \
+  -d '{"text": "I found unauthorized charges on my credit card!"}'
+```
+
+**Response Example:**
+```json
+{
+  "category": "Credit Card",
+  "confidence": 0.95,
+  "severity": 9,
+  "route": "Fraud Team",
+  "issue_category": "Fraud",
+  "sentiment": "Angry",
+  "needs_review": false
+}
+```
+
+### Interactive API Documentation
+
+- **Swagger UI**: http://localhost:8000/docs
+- **ReDoc**: http://localhost:8000/redoc
+
+### Run Tests
+
+```bash
+pytest tests/
+```
+
+---
+
 **Built with Python • Powered by NLP • Validated on Real Data**
 
