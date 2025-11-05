@@ -366,6 +366,83 @@ pytest tests/test_app.py -v
 
 ---
 
+## 🤖 Optional LLM Assist
+
+The system includes optional LLM-enhanced classification for improved accuracy. The implementation uses safe fallbacks and never exposes API keys.
+
+### Setup
+
+Set your API key as an environment variable (choose one):
+
+```bash
+# OpenAI
+export OPENAI_API_KEY="sk-..."
+
+# Anthropic Claude
+export ANTHROPIC_API_KEY="sk-ant-..."
+
+# Azure OpenAI
+export AZURE_OPENAI_KEY="..."
+export AZURE_OPENAI_ENDPOINT="https://..."
+```
+
+### Usage Example
+
+```python
+from src.llm_assist import classify_with_llm
+from src.classifier import classify_complaint
+
+# Try LLM-assisted classification
+text = "I found unauthorized charges on my credit card!"
+
+result = classify_with_llm(text, provider="openai")
+
+if result:
+    print(f"LLM Classification: {result}")
+else:
+    # Graceful fallback to rule-based classifier
+    print("LLM unavailable, using rule-based classifier")
+    result = classify_complaint(text)
+    print(f"Rule-based Classification: {result}")
+```
+
+### Check Configuration
+
+```bash
+python -m src.llm_assist
+```
+
+This will display which providers are configured:
+```
+LLM Assist Configuration Check
+==================================================
+✓ Openai: Available
+✗ Anthropic: Not configured
+✗ Azure: Not configured
+```
+
+### Safe Design Features
+
+- ✅ **No hardcoded keys** - All credentials via environment variables
+- ✅ **Graceful fallback** - Returns `None` if LLM unavailable
+- ✅ **Logging** - Informs when falling back to rule-based classifier
+- ✅ **Stub implementation** - Safe for portfolio demonstration
+- ✅ **Production-ready pattern** - Easy to extend with actual LLM calls
+
+### Production Implementation Notes
+
+To implement actual LLM calls, install the provider SDK and uncomment the API call logic in `src/llm_assist.py`:
+
+```bash
+# For OpenAI
+pip install openai>=1.0.0
+
+# For Anthropic
+pip install anthropic>=0.7.0
+```
+
+---
+
 ## 📊 Sample Output
 
 ```json
