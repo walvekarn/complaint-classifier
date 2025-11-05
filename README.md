@@ -462,5 +462,29 @@ graph TD
 
 ---
 
+## 🔄 Reproduce Charts
+
+The visualizations in this README are generated from a reproducible Jupyter notebook. To regenerate the charts:
+
+### Prerequisites
+```bash
+pip install -r requirements.txt
+```
+
+### Generate Charts
+```bash
+make charts
+```
+
+This will:
+- Load `data/outputs/classified_sample_100.json`
+- Compute category counts, confidence histogram, routing breakdown, and severity distribution
+- Save PNGs to `charts/` directory with filenames matching README references
+- Create a timestamped execution log in `notebooks/generate_charts_output.ipynb`
+
+The chart generation notebook is located at `notebooks/generate_charts.ipynb` and uses only matplotlib for plotting.
+
+---
+
 **Built with Python • Powered by NLP • Validated on Real Data**
 
