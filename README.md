@@ -539,5 +539,76 @@ pytest tests/
 
 ---
 
+## 🤖 Optional LLM Assist
+
+The system supports optional LLM-powered classification to enhance the rule-based baseline. This feature is entirely optional and falls back gracefully if not configured.
+
+### Supported Providers
+
+- **OpenAI** (GPT-4, GPT-3.5)
+- **Anthropic** (Claude)
+- **Azure OpenAI**
+
+### Configuration
+
+Set environment variables for your chosen provider:
+
+**OpenAI:**
+```bash
+export OPENAI_API_KEY="your-api-key-here"
+```
+
+**Anthropic:**
+```bash
+export ANTHROPIC_API_KEY="your-api-key-here"
+```
+
+**Azure OpenAI:**
+```bash
+export AZURE_OPENAI_KEY="your-key-here"
+export AZURE_OPENAI_ENDPOINT="your-endpoint-here"
+```
+
+### Usage Example
+
+```python
+from src.llm_assist import classify_with_llm
+from src.classifier import classify_complaint
+
+text = "I found unauthorized charges on my credit card!"
+
+# Try LLM-assisted classification (falls back gracefully if unavailable)
+llm_result = classify_with_llm(text, provider="openai")
+
+if llm_result:
+    print(f"LLM Classification: {llm_result}")
+else:
+    # Falls back to rule-based classifier
+    baseline_result = classify_complaint(text)
+    print(f"Rule-based Classification: {baseline_result}")
+```
+
+### Check LLM Status
+
+```python
+from src.llm_assist import get_llm_status
+
+status = get_llm_status()
+print(status)
+# {'openai': True, 'anthropic': False, 'azure': False}
+```
+
+### Important Notes
+
+⚠️ **No API keys are stored in the repository** - all credentials must be set as environment variables
+
+✅ **Graceful fallback** - If no LLM provider is configured, the system automatically uses the rule-based classifier
+
+🧪 **Unit tests mock LLM calls** - Tests do not require API keys or make actual LLM calls
+
+📊 **Current implementation is a safe stub** - Demonstrates the architecture without incurring API costs
+
+---
+
 **Built with Python • Powered by NLP • Validated on Real Data**
 
