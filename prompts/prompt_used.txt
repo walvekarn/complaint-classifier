@@ -3,6 +3,7 @@ COMPLAINT CLASSIFICATION SYSTEM - PROMPT & LOGIC DOCUMENTATION
 ================================================================================
 
 PROJECT: AI-Powered Consumer Complaint Classifier
+AUTHOR: Nikita Walvekar (walvekarn) — Portfolio POC
 DATE: November 5, 2025
 DATASET: CFPB Consumer Complaint Database (284,500 complaints)
 TEST SAMPLE: 100 complaints
@@ -284,7 +285,7 @@ VALIDATION METHODOLOGY
 ================================================================================
 
 Sample Selection:
-- First 10 classified complaints selected
+- Preliminary 10-item spot check (first 10 classified complaints)
 - Covers diverse product types and severities
 - Mix of high and low confidence cases
 
@@ -299,6 +300,7 @@ Accuracy Calculation:
 - Product accuracy: 9/10 correct = 90%
 - Overall assessment: Manual review of all fields
 - Confidence reliability: High (1.0) more accurate than low (0.7)
+- Note: Full validation on larger sample recommended for production use
 
 ================================================================================
 PERFORMANCE METRICS
@@ -416,9 +418,10 @@ Processing Environment:
 - API-ready: JSON output supports REST API integration
 
 Scalability:
-- Current: 100 complaints in 3.5 seconds
-- Estimated: 284,500 in ~160 seconds (2.6 minutes)
-- Can process millions with parallel processing
+- Current: 100 complaints in 3.5 seconds (MEASURED)
+- Full-run timings: 284,500 in ~160 seconds (ESTIMATE - not measured)
+- Production deployment would require full-scale timing validation
+- Can process millions with parallel processing (theoretical)
 
 ================================================================================
 CITATION & ATTRIBUTION

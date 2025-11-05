@@ -4,6 +4,29 @@ An intelligent system that automatically classifies and routes consumer complain
 
 ---
 
+## 📖 What This Is
+
+A **complaint routing baseline** built on the [Kaggle Consumer Financial Protection Bureau (CFPB) Consumer Complaint Database](https://www.kaggle.com/datasets/cfpb/us-consumer-finance-complaints). This system converts raw complaint text into structured classifications:
+
+- **Category**: Product type (Credit Card, Mortgage, Student Loan, etc.)
+- **Confidence**: Classification certainty score (0.0-1.0)
+- **Severity**: Urgency level (1-10 scale)
+- **Human-in-the-loop gate**: Flags low-confidence cases (<0.75) for manual review
+
+**Purpose**: Portfolio proof-of-concept demonstrating NLP classification, intelligent routing, and quality assurance at scale.
+
+---
+
+## 🎯 Problems It Solves
+
+✅ **Slow Triage**: Reduces processing time from 3-5 minutes to ~2 seconds per complaint  
+✅ **Inconsistency**: Standardizes classification logic across all complaints  
+✅ **Hidden Criticals**: Auto-flags fraud and high-severity cases for immediate attention  
+✅ **Auditability**: Provides confidence scores and structured JSON output for tracking  
+✅ **Productization-Ready**: Demonstrates API-ready pipeline for production deployment
+
+---
+
 ## 📊 Problem Statement
 
 ### The Challenge
@@ -94,6 +117,34 @@ An **AI-powered classification system** that automatically:
 **Confidence Levels:**
 - High (>0.9): 42% - Ready for immediate processing
 - Low (<0.75): 58% - Flagged for manual review
+
+---
+
+## ⚠️ Assumptions & Limits
+
+### Demo Scope
+- **Sample size**: 100-row demo measured (~3.5 seconds total, ~0.035s per complaint)
+- **Validation**: 10-item spot-check (product accuracy: 9/10 = 90%)
+- **Full-dataset timings**: NOT yet captured; estimates based on sample extrapolation
+
+### ROI Numbers
+- Cost savings ($422K) and time savings (14K hours) are **illustrative calculations**
+- Based on assumed manual processing rate (3 min/complaint) and labor cost ($30/hr)
+- Actual production performance would require full-scale validation
+
+### Known Limitations
+- **58% of complaints lack narrative text**, limiting confidence and accuracy
+- **Rule-based NLP** (not machine learning) - keyword matching only
+- **Sentiment detection conservative** (92% classified as neutral)
+- **Binary confidence** (0.7 or 1.0) - no gradient scoring
+- **Issue categories too broad** (46% classified as "Other")
+
+### What This Demonstrates
+✅ End-to-end classification pipeline  
+✅ Multi-dimensional categorization (6 attributes)  
+✅ Confidence-based quality gates  
+✅ Real-world data handling (284K+ records)  
+✅ Portfolio-ready architecture and documentation
 
 ---
 
