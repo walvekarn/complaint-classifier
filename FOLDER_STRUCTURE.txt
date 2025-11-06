@@ -13,7 +13,6 @@ complaint-classifier/
 │
 ├── .gitignore                         → Protects from large files (*.csv, *.xlsx)
 ├── README.md                          → Main documentation with charts
-├── GITHUB_SETUP.md                    → Setup instructions
 ├── FOLDER_STRUCTURE.txt               → This file
 │
 ├── charts/                            → Visualizations (641 KB)
@@ -48,7 +47,6 @@ WHAT LIVES WHERE
 Root Level:
   • .gitignore - Protects against committing large dataset files
   • README.md - Main documentation with problem statement, results, charts
-  • GITHUB_SETUP.md - Instructions for Git setup and pushing to GitHub
   • FOLDER_STRUCTURE.txt - This reference document
 
 charts/:
