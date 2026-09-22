@@ -2,12 +2,12 @@
 COMPLAINT CLASSIFICATION SYSTEM - PROMPT & LOGIC DOCUMENTATION
 ================================================================================
 
-PROJECT: AI-Powered Consumer Complaint Classifier
+PROJECT: Rule-based Complaint Routing Prototype (CFPB data)
 AUTHOR: Nikita Walvekar (walvekarn) — Portfolio POC
 DATE: November 5, 2025
 DATASET: CFPB Consumer Complaint Database (284,500 complaints)
 TEST SAMPLE: 100 complaints
-ACCURACY: 90% (validated on first 10)
+ACCURACY: validation pending (10-sample check incomplete)
 
 ================================================================================
 CLASSIFICATION PROMPT
@@ -297,9 +297,9 @@ Validation Criteria:
 5. Routing logic: Confirm department assignment is appropriate
 
 Accuracy Calculation:
-- Product accuracy: 9/10 correct = 90%
+- Product accuracy: validation pending (10-sample check incomplete)
 - Overall assessment: Manual review of all fields
-- Confidence reliability: High (1.0) more accurate than low (0.7)
+- Confidence reliability: not established; confidence is a text-length heuristic, not a model probability
 - Note: Full validation on larger sample recommended for production use
 
 ================================================================================
@@ -381,7 +381,7 @@ Phase 1 (Current): Rule-Based NLP
 ✓ Keyword matching
 ✓ Pattern recognition
 ✓ Confidence flagging
-✓ 90% accuracy on products
+- Product accuracy: validation pending (10-sample check incomplete)
 
 Phase 2 (Planned): Machine Learning
 - Train classification model (BERT, RoBERTa)
@@ -437,7 +437,7 @@ Classification System:
 Author: AI/NLP Portfolio Project
 Date: November 5, 2025
 Purpose: Educational/Portfolio demonstration
-Validation: 90% accuracy on sample data
+Validation: validation pending (10-sample check incomplete)
 
 ================================================================================
 END OF DOCUMENTATION

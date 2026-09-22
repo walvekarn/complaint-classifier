@@ -1,4 +1,4 @@
-# 🎯 Portfolio Summary: AI Complaint Classifier
+# 🎯 Portfolio Summary: Rule-based Complaint Routing Prototype
 
 ## ✅ PROJECT COMPLETE
 
@@ -6,7 +6,9 @@
 
 ## 📋 What Was Built
 
-An **AI-powered consumer complaint classification system** that automatically categorizes, prioritizes, and routes 284,500+ financial complaints with **90% accuracy** and **2-second processing time**.
+A **rule-based consumer complaint classification prototype** that categorizes, prioritizes, and routes complaints from the 284,500-row CFPB dataset with a **2-second illustrative processing time**.
+
+Validation: 10-sample manual check, incomplete (see data/outputs/validation_report.csv). No accuracy claim is made.
 
 ---
 
@@ -15,8 +17,7 @@ An **AI-powered consumer complaint classification system** that automatically ca
 ### 1. Data Overview
 - **Started with**: 284,500 real consumer complaints (CFPB database)
 - **Tested on**: 100 complaints  
-- **Validated on**: First 10 complaints
-- **Accuracy**: **90%** (9/10 correct product classifications)
+- **Validation sample**: First 10 complaints (all 10 rows are marked validation_status=Pending in data/outputs/validation_report.csv)
 - **Dataset size**: 312,628 rows × 18 columns
 
 ### 2. System Capabilities
@@ -29,14 +30,14 @@ The system classifies each complaint across **6 dimensions**:
 | **Severity Score** | Urgency level (1-10) | Critical (8-10), High (6-7), Medium (4-5), Low (1-3) |
 | **Sentiment** | Customer emotion | Angry, Frustrated, Confused, Neutral, Satisfied |
 | **Routing** | Department assignment | Fraud Team, Legal, Escalation, Support, etc. |
-| **Confidence** | Classification certainty | 0.0-1.0 (flags <0.75 for review) |
+| **Confidence** | Text-length heuristic, not a model probability | 0.0-1.0 (flags <0.75 for review) |
 
 ### 3. Performance Metrics
-- ⚡ **Processing Speed**: 2 seconds per complaint (vs. 3-5 min manual)
-- 💰 **Cost Savings**: $422,760 annually (98.9% reduction)
-- ⏱️ **Time Savings**: 14,092 hours annually (98.9% reduction)
+- **Processing Speed**: 2 seconds per complaint (illustrative; a 100-row demo ran in ~3.5 s total)
 - 🎯 **Average Confidence**: 82.6%
 - 📊 **High Confidence Rate**: 42% (ready for immediate processing)
+
+Cost and time savings are not measured. An illustrative cost model, labelled as assumptions only, is in the README under "Illustrative cost model (assumptions only, not a measured saving)".
 
 ---
 
@@ -118,20 +119,9 @@ complaint-classifier/
 
 ## 🎯 Validation Results
 
-### Accuracy Breakdown
-| Metric | Result |
-|--------|--------|
-| Product Classification | 9/10 (90%) ✓ |
-| Fraud Detection | 100% accurate ✓ |
-| Routing Logic | Appropriate for all cases ✓ |
-| Confidence Correlation | High confidence = accurate ✓ |
+Validation: 10-sample manual check, incomplete (see data/outputs/validation_report.csv). No accuracy claim is made.
 
-### What Worked Well ✅
-- Product classification highly accurate
-- Fraud keywords properly detected
-- Severity scoring follows logical patterns
-- Routing aligns with issue types
-- Confidence reflects data quality
+All 10 rows in data/outputs/validation_report.csv carry validation_status=Pending, so no product, fraud-detection, routing or confidence accuracy figure is reported.
 
 ### Known Limitations ⚠️
 - 58% of complaints lack narrative text
@@ -143,25 +133,19 @@ complaint-classifier/
 
 ## 💼 Business Impact
 
-### Problem Solved
-**Manual complaint routing is slow, expensive, and error-prone**
+### Problem Addressed
+**Manual complaint routing is slow and error-prone**
 
 Before:
 - ❌ 3-5 minutes per complaint
-- ❌ 14,250 hours annually
-- ❌ $427,500 in labor costs
 - ❌ Critical cases delayed
 
 After:
-- ✅ 2 seconds per complaint
-- ✅ 158 hours annually
-- ✅ $4,740 in processing costs
+- 2 seconds per complaint (illustrative)
 - ✅ Critical cases flagged immediately
 
-### ROI
-- **Development Time**: ~8 hours
-- **Annual Savings**: $422,760
-- **ROI**: **52,845%** (first year)
+### Cost model
+No dollar figure or ROI is claimed in this document. The README section "Illustrative cost model (assumptions only, not a measured saving)" shows how such a model could be framed from timing assumptions.
 
 ---
 
@@ -194,13 +178,9 @@ After:
 | Metric | Value |
 |--------|-------|
 | 📁 Dataset Size | 284,500 complaints |
-| ✅ Accuracy | 90% |
-| ⚡ Processing Speed | 2 sec/complaint |
-| 💰 Annual Cost Savings | $422,760 |
-| ⏱️ Time Savings | 14,092 hours/year |
+| Processing Speed | 2 sec/complaint (illustrative) |
 | 🎯 Average Confidence | 82.6% |
 | 🚨 Critical Cases Detected | 9% (auto-routed) |
-| 📈 Efficiency Gain | 98.9% |
 
 ---
 
@@ -218,7 +198,7 @@ After:
 
 ### Business Skills
 - ✅ Problem identification
-- ✅ ROI calculation
+- Cost model framing (assumptions only)
 - ✅ Process optimization
 - ✅ Validation methodology
 - ✅ Stakeholder communication
@@ -265,24 +245,19 @@ After:
 
 ### Technical Achievements
 1. ✅ Processed 284,500 complaints successfully
-2. ✅ Achieved 90% classification accuracy
-3. ✅ Reduced processing time by 98.9%
-4. ✅ Built complete end-to-end pipeline
-5. ✅ Created professional documentation
+2. ✅ Built complete end-to-end pipeline
+3. ✅ Created professional documentation
 
 ### Business Value
-1. 💰 $422K annual cost savings demonstrated
-2. ⚡ 99% faster than manual processing
-3. 🎯 Intelligent routing reduces workload
-4. 📊 Data-driven insights from analysis
-5. 🚨 Critical cases auto-flagged
+1. 🎯 Intelligent routing reduces workload
+2. 📊 Data-driven insights from analysis
+3. 🚨 Critical cases auto-flagged
 
 ### Portfolio Value
 1. 📁 GitHub-ready structure
 2. 📊 Professional visualizations
 3. 📝 Comprehensive documentation
-4. ✅ Validated accuracy metrics
-5. 💼 Clear business impact
+4. Clear problem and solution framing
 
 ---
 
@@ -293,15 +268,14 @@ After:
 - 284,500 real consumer complaints
 - Production-scale dataset
 
-### 2. Validated Results
-- 90% accuracy on real data
-- Manual validation performed
-- Confidence scoring implemented
+### 2. Validation Status
+- Validation: 10-sample manual check, incomplete (see data/outputs/validation_report.csv). No accuracy claim is made.
+- Confidence scoring implemented as a text-length heuristic
 
-### 3. Business Impact
-- Quantifiable ROI ($422K savings)
-- Clear problem → solution → results
-- Scalable to millions of complaints
+### 3. Business Framing
+- Clear problem → solution → outputs
+- Illustrative cost model in the README, labelled as assumptions only
+- Scalable design for larger complaint volumes
 
 ### 4. Professional Presentation
 - Complete documentation
@@ -312,7 +286,7 @@ After:
 ### 5. End-to-End Solution
 - Data ingestion → processing → output
 - Classification + routing + confidence
-- Validation + quality assurance
+- Manual validation checklist + quality assurance
 
 ---
 
@@ -334,7 +308,6 @@ After:
 ```
 ---
 
-**Built with Python • Powered by NLP • Validated on Real Data**
+**Built with Python. Rule-based NLP on CFPB public data.**
 
 *Project completed: November 5, 2025*
-

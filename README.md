@@ -1,4 +1,4 @@
-# 🎯 AI-Powered Consumer Complaint Classifier
+# Rule-based Complaint Routing Prototype (CFPB data)
 
 ## What This Is
 
@@ -31,21 +31,20 @@ Includes a **human-in-the-loop gate** that flags low-confidence cases (<0.75) fo
 ### The Challenge
 Financial institutions receive hundreds of thousands of consumer complaints annually. Manual classification and routing of these complaints is:
 
-- **Time-Intensive**: With 284,500 complaints, manual review takes approximately **14,250 hours** (assuming 3 minutes per complaint)
+- **Time-Intensive**: Manual review is assumed at approximately 3 minutes per complaint
 - **Error-Prone**: Human reviewers may misclassify complaints due to fatigue or inconsistency
 - **Costly**: Manual labor costs for complaint processing run into millions annually
 - **Slow Response**: Critical complaints (fraud, identity theft) may not receive immediate attention
 
 ### Business Impact
 - **Average manual processing**: 3-5 minutes per complaint
-- **Estimated annual cost**: $427,500 (at $30/hour labor rate)
 - **Risk**: Delayed responses to critical issues can lead to regulatory penalties and customer churn
 
 ---
 
 ## 💡 Solution
 
-An **AI-powered classification system** that automatically:
+A **rule-based classification system** that automatically:
 
 1. **Classifies complaints** into product categories (Credit Card, Mortgage, Student Loan, etc.)
 2. **Identifies issue types** (Fraud, Billing Error, Account Access, etc.)
@@ -55,7 +54,6 @@ An **AI-powered classification system** that automatically:
 6. **Provides confidence scores** (0.0-1.0) to flag cases needing manual review
 
 ### Key Features
-✅ **90% classification accuracy** (validated on sample)  
 ✅ **2 seconds per complaint** (vs. 3-5 minutes manual)  
 ✅ **Automatic priority scoring** for critical cases  
 ✅ **Intelligent routing** based on issue type and severity  
@@ -71,10 +69,7 @@ An **AI-powered classification system** that automatically:
 |--------|-------|
 | **Dataset Size** | 284,500 complaints (CFPB database) |
 | **Test Sample** | 100 complaints |
-| **Classification Accuracy** | 90% (9/10 correct) |
-| **Processing Speed** | ~2 seconds per complaint |
-| **Time Saved** | 14,248 hours → 158 hours (98.9% reduction) |
-| **Cost Savings** | ~$427,500 → ~$4,740 (98.9% reduction) |
+| **Processing Speed** | ~2 seconds per complaint (illustrative; a 100-row demo ran in ~3.5 s total) |
 | **Average Confidence** | 0.826 (82.6%) |
 
 ### Classification Distribution
@@ -110,6 +105,8 @@ An **AI-powered classification system** that automatically:
 - Escalation: 7%
 
 ### Quality Assurance
+
+Confidence is a text-length heuristic, not a model probability.
 
 ![Confidence Distribution](charts/confidence_distribution.png)
 
@@ -196,6 +193,8 @@ Intelligent department assignment:
 - **Support**: General inquiries, standard processing
 
 ### 6. Confidence Score (0.0-1.0)
+Confidence is a text-length heuristic, not a model probability.
+
 Quality assurance metric:
 - **1.0**: Full complaint narrative available, high certainty
 - **0.7**: No narrative, classification based on product/issue fields only
@@ -221,64 +220,30 @@ complaint-classifier/
 
 ---
 
-## 🔍 Validation Results
+## Validation
 
-### Sample Validation (First 10 Complaints)
-
-| Metric | Result |
-|--------|--------|
-| Product accuracy | 9/10 (90%) |
-| High confidence cases | 6/10 (60%) |
-| Low confidence cases | 4/10 (40%) |
-| Fraud detection | 100% accurate |
-| Routing logic | Appropriate for all cases |
-
-### What Worked Well ✅
-- Product classification highly accurate (90%)
-- Fraud detection using keyword matching effective
-- Severity scoring follows logical patterns
-- Routing recommendations aligned with issue types
-- Confidence scores accurately reflect data quality
-
-### Areas for Improvement ⚠️
-- 58% of complaints lack narrative text (limits accuracy)
-- Issue categorization: 46% classified as "Other" (needs refinement)
-- Sentiment detection conservative (92% neutral)
-- Binary confidence (0.7 or 1.0) - could use gradient scoring
+Validation: 10-sample manual check, incomplete (see data/outputs/validation_report.csv). No accuracy claim is made.
 
 ---
 
-## 💼 Business Value
+## Illustrative cost model (assumptions only, not a measured saving)
 
-### Quantifiable Benefits
+Nothing in this section is a measured result. The figures below are extrapolated from timing assumptions and are provided only to show how a cost model for complaint triage could be framed.
 
-**Time Savings:**
-- Manual: 284,500 complaints × 3 min = **14,250 hours**
-- Automated: 284,500 complaints × 2 sec = **158 hours**
-- **Savings: 14,092 hours (98.9%)**
+### Worked example (assumptions only)
 
-**Cost Savings:**
-- Manual: 14,250 hours × $30/hr = **$427,500**
-- Automated: 158 hours × $30/hr = **$4,740**
-- **Savings: $422,760 annually**
+Assumptions, not measurements: 284,500 complaints per year, 3 minutes per manual review, ~2 seconds per automated classification, $30 per labor hour.
 
-**Response Time:**
-- Critical complaints identified in **2 seconds** vs. hours/days
-- Fraud cases automatically routed to specialized team
-- High-severity issues flagged for immediate escalation
+| Scenario | Hours per year | Labor cost per year |
+|----------|----------------|---------------------|
+| Manual (284,500 × 3 min) | approximately 14,250 | approximately $427,500 |
+| Automated (284,500 × 2 sec) | approximately 158 | approximately $4,740 |
 
-### ROI Calculation
-- Development time: ~8 hours
-- Annual savings: $422,760
-- **ROI: 52,845%** (First year)
+The difference between the two rows is an extrapolation from these assumptions, not a measured saving.
 
----
+### Calculate Your Own Scenario
 
-## 📊 Illustrative Impact
-
-Use the built-in ROI calculator to estimate time and cost savings for your organization:
-
-### Calculate Your ROI
+Use the built-in calculator to estimate time and cost under your own assumptions:
 
 ```bash
 python3 scripts/roi.py --cases 100000 --auto-rate 0.5
@@ -458,14 +423,6 @@ docker run -p 8000:8000 complaint-classifier
 
 The API will be available at `http://localhost:8000`
 
-### With Environment Variables (for LLM support)
-
-```bash
-docker run -p 8000:8000 \
-  -e OPENAI_API_KEY="sk-..." \
-  complaint-classifier
-```
-
 ### Docker Compose (Optional)
 
 Create a `docker-compose.yml`:
@@ -478,8 +435,6 @@ services:
     build: .
     ports:
       - "8000:8000"
-    environment:
-      - OPENAI_API_KEY=${OPENAI_API_KEY}
     restart: unless-stopped
 ```
 
@@ -497,80 +452,11 @@ docker-compose up
 
 ---
 
-## 🤖 Optional LLM Assist
+## LLM Assist (stub)
 
-The system includes optional LLM-enhanced classification for improved accuracy. The implementation uses safe fallbacks and never exposes API keys.
+`src/llm_assist.py` is a stub; this version makes no LLM call. Classification is rule-based.
 
-### Setup
-
-Set your API key as an environment variable (choose one):
-
-```bash
-# OpenAI
-export OPENAI_API_KEY="sk-..."
-
-# Anthropic Claude
-export ANTHROPIC_API_KEY="sk-ant-..."
-
-# Azure OpenAI
-export AZURE_OPENAI_KEY="..."
-export AZURE_OPENAI_ENDPOINT="https://..."
-```
-
-### Usage Example
-
-```python
-from src.llm_assist import classify_with_llm
-from src.classifier import classify_complaint
-
-# Try LLM-assisted classification
-text = "I found unauthorized charges on my credit card!"
-
-result = classify_with_llm(text, provider="openai")
-
-if result:
-    print(f"LLM Classification: {result}")
-else:
-    # Graceful fallback to rule-based classifier
-    print("LLM unavailable, using rule-based classifier")
-    result = classify_complaint(text)
-    print(f"Rule-based Classification: {result}")
-```
-
-### Check Configuration
-
-```bash
-python -m src.llm_assist
-```
-
-This will display which providers are configured:
-```
-LLM Assist Configuration Check
-==================================================
-✓ Openai: Available
-✗ Anthropic: Not configured
-✗ Azure: Not configured
-```
-
-### Safe Design Features
-
-- ✅ **No hardcoded keys** - All credentials via environment variables
-- ✅ **Graceful fallback** - Returns `None` if LLM unavailable
-- ✅ **Logging** - Informs when falling back to rule-based classifier
-- ✅ **Stub implementation** - Safe for portfolio demonstration
-- ✅ **Production-ready pattern** - Easy to extend with actual LLM calls
-
-### Production Implementation Notes
-
-To implement actual LLM calls, install the provider SDK and uncomment the API call logic in `src/llm_assist.py`:
-
-```bash
-# For OpenAI
-pip install openai>=1.0.0
-
-# For Anthropic
-pip install anthropic>=0.7.0
-```
+The stub only checks whether an `OPENAI_API_KEY` or Azure OpenAI environment variable is set and returns `None`; the API (`src/app.py`) uses `src/classifier.py`.
 
 ---
 
@@ -602,7 +488,7 @@ pip install anthropic>=0.7.0
 ## 🎓 Key Insights
 
 ### Technical Learnings
-1. **Narrative text is crucial** - Complaints with full narratives achieve 100% confidence
+1. **Narrative text is crucial** - Complaints with full narratives receive confidence 1.0
 2. **Keyword-based NLP** works well for structured complaint data
 3. **Severity scoring** requires domain expertise and continuous refinement
 4. **Confidence flagging** enables quality assurance at scale
@@ -621,11 +507,10 @@ This is a **portfolio proof-of-concept** with the following scope:
 
 ### What Was Measured
 - ✅ **100-row demo** processed in ~3.5 seconds (~0.035s per complaint)
-- ✅ **Validation**: 10-item spot-check showed **90% product classification accuracy** (9/10 correct)
 - ✅ Confidence scoring correlates with narrative availability (1.0 = full text, 0.7 = metadata only)
 
 ### What Is Illustrative
-- ⚠️ **ROI numbers** ($422K savings, 14K hours) are **extrapolated estimates** based on manual timing assumptions
+- ROI numbers in the illustrative cost model are extrapolated from manual timing assumptions
 - ⚠️ **Full-dataset timings** (284K complaints) were **not captured** in production conditions
 - ⚠️ Rule-based classification may miss edge cases requiring ML models
 - ⚠️ Sentiment detection is conservative (92% classified as "Neutral")
@@ -643,7 +528,7 @@ This is a **portfolio proof-of-concept** with the following scope:
 ## 🔮 Future Enhancements
 
 ### Phase 2 Improvements
-- [ ] Machine learning model (BERT, RoBERTa) for better accuracy
+- [ ] Machine learning model (BERT, RoBERTa) as a comparison to the rule-based baseline
 - [ ] Multi-language support (Spanish, Chinese, etc.)
 - [ ] Real-time API for live complaint processing
 - [ ] Dashboard for monitoring and analytics
@@ -671,9 +556,9 @@ This is a **portfolio proof-of-concept** with the following scope:
 If you use this project, please cite:
 
 ```
-Consumer Complaint Classifier
-AI-powered complaint classification system
-Accuracy: 90% | Processing: 2 sec/complaint
+Rule-based Complaint Routing Prototype (CFPB data)
+Rule-based complaint routing prototype
+Processing: 2 sec/complaint (illustrative)
 Dataset: CFPB Consumer Complaint Database (284,500 complaints)
 ```
 
@@ -684,13 +569,9 @@ Dataset: CFPB Consumer Complaint Database (284,500 complaints)
 | Metric | Value |
 |--------|-------|
 | 📊 Total Complaints | 284,500 |
-| ✅ Accuracy | 90% |
 | ⚡ Speed | 2 sec/complaint |
-| 💰 Cost Savings | $422,760/year |
-| ⏱️ Time Savings | 14,092 hours/year |
 | 🎯 Confidence | 82.6% average |
 
 ---
 
-**Built with Python • Powered by NLP • Validated on Real Data**
-
+**Built with Python. Rule-based NLP on CFPB public data.**

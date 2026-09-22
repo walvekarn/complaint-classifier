@@ -1,7 +1,7 @@
 ================================================================================
 PROJECT FOLDER STRUCTURE
 ================================================================================
-Project: AI-Powered Consumer Complaint Classifier
+Project: Rule-based Complaint Routing Prototype (CFPB data)
 Author: Nikita Walvekar (walvekarn)
 Repository: https://github.com/walvekarn/complaint-classifier
 
@@ -30,7 +30,7 @@ complaint-classifier/
 │
 ├── docs/                              → Documentation (16 KB)
 │   ├── PORTFOLIO_SUMMARY.md           → Project overview for recruiters
-│   └── VALIDATION_SUMMARY.md          → Accuracy validation details
+│   └── VALIDATION_SUMMARY.md          → Validation details (validation pending)
 │
 ├── prompts/                           → Technical documentation (14 KB)
 │   └── prompt_used.txt                → Classification logic & algorithms
@@ -65,7 +65,7 @@ data/samples/:
 
 docs/:
   • PORTFOLIO_SUMMARY.md - Executive summary for quick review
-  • VALIDATION_SUMMARY.md - Detailed accuracy validation methodology
+  • VALIDATION_SUMMARY.md - Validation methodology and status (validation pending)
 
 prompts/:
   • prompt_used.txt - Complete classification logic documentation
@@ -139,7 +139,7 @@ Processing:
 Output:
   data/outputs/classified_sample_100.json
   └─> 100 complaints with structured classification
-      └─> Validation on first 10 (90% accuracy)
+      └─> Validation on first 10 (validation pending)
 
 Visualization:
   charts/*.png (4 charts)
@@ -159,7 +159,7 @@ KEY CHARACTERISTICS
 ✓ Visual - 4 professional charts at high resolution
 ✓ Protected - .gitignore prevents accidental large file commits
 ✓ Reproducible - Full classification logic documented
-✓ Validated - 90% accuracy on 10-item spot check
+- Validation pending - 10-item spot check incomplete (see data/outputs/validation_report.csv)
 
 ================================================================================
 END OF STRUCTURE DOCUMENTATION

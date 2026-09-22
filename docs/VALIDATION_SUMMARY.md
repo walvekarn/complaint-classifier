@@ -1,23 +1,25 @@
 # Classification Validation Summary
 
 ## Overview
-Validated AI classification system on first 100 complaints from 312,628 total complaints.
+Rule-based classification run on the first 100 complaints from 312,628 total complaints.
+
+Validation: 10-sample manual check, incomplete (see data/outputs/validation_report.csv). No accuracy claim is made.
 
 ---
 
-## ✅ Validation Results (First 10 Complaints)
+## Validation Status (First 10 Complaints)
 
-### Accuracy Metrics
-- **Product Classification**: 9/10 (90% accurate)
+### Status
+- **Manual check**: 10 complaints selected; all 10 rows in data/outputs/validation_report.csv are marked validation_status=Pending
 - **High Confidence Cases**: 6/10 (60%)
 - **Low Confidence Cases**: 4/10 (40%)
 
-### What Was Validated
-For each complaint, compared:
+### What the 10-sample check compares
+For each complaint, the form lists:
 1. Original complaint text
-2. AI classification (6 fields)
-3. AI confidence score
-4. Match against original product/issue fields
+2. Rule-based classification (6 fields)
+3. Confidence score (a text-length heuristic, not a model probability)
+4. The original product/issue fields, for comparison
 
 ---
 
@@ -71,60 +73,63 @@ For each complaint, compared:
 - Complaints WITH narratives: 1.00 confidence
 - Complaints WITHOUT narratives: 0.70 confidence
 
+Confidence is a text-length heuristic, not a model probability.
+
 ---
 
-## 🔍 Detailed Validation Examples
+## Validation Examples (status: Pending)
 
-### Example 1: High Confidence, Correct Classification
+The three rows below show what the check compares. None has been marked correct or wrong yet.
+
+### Example 1: High Confidence Case
 **Complaint ID**: 1816726
 - **Company**: DISCOVER BANK
 - **Original Product**: Credit card
-- **AI Product**: Credit Card ✓
-- **AI Issue**: Billing Error
+- **Classifier Product**: Credit Card
+- **Classifier Issue**: Billing Error
 - **Severity**: 7/10
 - **Sentiment**: Angry
 - **Routing**: Escalation
-- **Confidence**: 100% ✓
-- **Assessment**: Perfect match - customer complained about billing dispute with strong language
+- **Confidence**: 1.0
+- **Validation status**: Pending
 
-### Example 2: Low Confidence, Needs Review
+### Example 2: Low Confidence Case
 **Complaint ID**: 1509954
 - **Company**: Experian Information Solutions Inc.
 - **Original Product**: Credit reporting
-- **AI Product**: Credit Reporting ✓
-- **AI Issue**: Billing Error
+- **Classifier Product**: Credit Reporting
+- **Classifier Issue**: Billing Error
 - **Severity**: 5/10
 - **Sentiment**: Neutral
 - **Routing**: Billing Dept
-- **Confidence**: 70% ⚠️
+- **Confidence**: 0.7
 - **Narrative**: [NONE PROVIDED]
-- **Assessment**: Product correct but limited info without narrative
+- **Validation status**: Pending
 
-### Example 3: Fraud Detection Working
+### Example 3: Fraud Keyword Case
 **Complaint ID**: 1786527
 - **Company**: CITIBANK, N.A.
 - **Original Issue**: Identity theft / Fraud / Embezzlement
-- **AI Product**: Credit Card ✓
-- **AI Issue**: Fraud ✓
+- **Classifier Product**: Credit Card
+- **Classifier Issue**: Fraud
 - **Severity**: 7/10
-- **Routing**: Fraud Team ✓
-- **Confidence**: 70%
-- **Assessment**: Correctly identified fraud despite no narrative
+- **Routing**: Fraud Team
+- **Confidence**: 0.7
+- **Validation status**: Pending
 
 ---
 
 ## 🎯 Pattern Analysis
 
-### What the AI Got Right ✓
-1. **Product classification**: 90% match rate (9/10)
-2. **Fraud detection**: Correctly matched "Identity theft" → "Fraud"
-3. **Routing logic**: Appropriately routes high severity to escalation
-4. **Confidence correlation**: High confidence = narrative available
+### Observed behaviour of the rules
+1. **Fraud keyword mapping**: "Identity theft" in the original issue field maps to the "Fraud" category by rule
+2. **Routing logic**: High severity routes to Escalation or Fraud Team by rule
+3. **Confidence correlation**: High confidence = narrative available (text-length heuristic)
 
 ### Potential Issues ⚠️
 1. **Issue categorization**: 46% classified as "Other" (too generic)
 2. **Sentiment detection**: 92% neutral (may be under-detecting frustration)
-3. **Narrative dependency**: 58% lack narratives (limits accuracy)
+3. **Narrative dependency**: 58% lack narratives (limits classification depth)
 4. **Binary confidence**: Only 0.7 or 1.0 (no gradient)
 
 ---
@@ -134,22 +139,20 @@ For each complaint, compared:
 ### High Confidence Cases (1.0)
 - **Count**: 42 complaints
 - **Characteristic**: All have full complaint narratives
-- **Accuracy**: Estimated 90%+ (based on validation sample)
-- **Reliability**: ✅ HIGH
+- **Accuracy**: Not established (validation pending)
 
 ### Low Confidence Cases (0.7)
 - **Count**: 58 complaints  
 - **Characteristic**: No complaint narratives
-- **Accuracy**: Unknown (relies only on product/issue fields)
-- **Reliability**: ⚠️ MEDIUM - Flagged for manual review
+- **Accuracy**: Not established (relies only on product/issue fields)
+- **Handling**: Flagged for manual review
 
 ---
 
 ## 🎓 Key Insights
 
 ### Strengths
-- Product classification highly accurate when product field is clear
-- Fraud keywords properly detected
+- Fraud keywords detected by rule
 - Severity scoring follows logical patterns (fraud = high severity)
 - Routing recommendations align with issue type
 
@@ -160,11 +163,12 @@ For each complaint, compared:
 - Confidence scoring is binary (0.7 or 1.0 only)
 
 ### Recommendations
-1. **Manual review** all "Other" issue categories to improve classification
-2. **Enhance sentiment** analysis to catch subtle frustration/anger
-3. **Validate severity** scoring with domain experts
-4. **Refine confidence** calculation to provide gradient (not binary)
-5. **Focus on narratives** - consider processing only complaints with full text
+1. **Complete the manual check** in validation_form.txt before reporting any accuracy figure
+2. **Manual review** all "Other" issue categories to improve classification
+3. **Enhance sentiment** analysis to catch subtle frustration/anger
+4. **Validate severity** scoring with domain experts
+5. **Refine confidence** calculation to provide gradient (not binary)
+6. **Focus on narratives** - consider processing only complaints with full text
 
 ---
 
@@ -191,7 +195,7 @@ For each complaint, compared:
    - Recommendations
 
 5. **VALIDATION_SUMMARY.md** (this file)
-   - Comprehensive validation results
+   - Validation status
    - Pattern analysis
    - Key findings
 
@@ -201,29 +205,28 @@ For each complaint, compared:
 
 **Instructions**: Review validation_form.txt and mark each classification as ✓ (Correct) or ✗ (Wrong)
 
-**Preliminary Assessment** (automated comparison):
-- Product accuracy: 9/10 (90%)
-- Issue accuracy: Needs manual review
-- Severity appropriateness: Needs manual review
-- Sentiment accuracy: Needs manual review
-- Routing appropriateness: Appears logical
+**Current status** (data/outputs/validation_report.csv):
+- Product: Pending manual review
+- Issue: Pending manual review
+- Severity: Pending manual review
+- Sentiment: Pending manual review
+- Routing: Pending manual review
 
-**Next Step**: Complete manual validation in validation_form.txt to calculate final accuracy metrics.
+**Next Step**: Complete manual validation in validation_form.txt before any accuracy metric is reported.
 
 ---
 
 ## 📞 Questions to Answer Through Manual Validation
 
-1. ✓ **Are product classifications accurate?** YES - 90% match rate
-2. ⏳ **Are issue categories appropriate?** Pending manual review
-3. ⏳ **Are severity scores reasonable?** Pending manual review  
-4. ⏳ **Is sentiment accurately detected?** Likely conservative (92% neutral)
-5. ✓ **Is routing logical?** YES - follows severity/issue patterns
-6. ✓ **Which confidence scores are reliable?** High (1.0) = reliable, Low (0.7) = review needed
+1. **Are product classifications accurate?** Pending manual review
+2. **Are issue categories appropriate?** Pending manual review
+3. **Are severity scores reasonable?** Pending manual review  
+4. **Is sentiment accurately detected?** Pending manual review (92% neutral suggests conservative detection)
+5. **Is routing logical?** Pending manual review
+6. **Which confidence scores are reliable?** Pending manual review; confidence is a text-length heuristic, not a model probability
 
 ---
 
 *Validation Date: 2025-11-05*  
 *Dataset: First 100 of 312,628 total complaints*  
 *Classification System: Rule-based NLP with keyword matching*
-
