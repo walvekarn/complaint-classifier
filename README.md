@@ -1,4 +1,4 @@
-# Rule-based Complaint Routing Prototype (CFPB data)
+# Rule-based complaint-routing prototype (CFPB data)
 
 ## What This Is
 
@@ -44,7 +44,7 @@ Financial institutions receive hundreds of thousands of consumer complaints annu
 
 ## 💡 Solution
 
-A **rule-based classification system** that automatically:
+A **rule-based complaint-routing prototype** that automatically:
 
 1. **Classifies complaints** into product categories (Credit Card, Mortgage, Student Loan, etc.)
 2. **Identifies issue types** (Fraud, Billing Error, Account Access, etc.)
@@ -226,7 +226,9 @@ Validation: 10-sample manual check, incomplete (see data/outputs/validation_repo
 
 ---
 
-## Illustrative cost model (assumptions only, not a measured saving)
+## Illustrative cost model
+
+**Assumptions only; not a measured saving.**
 
 Nothing in this section is a measured result. The figures below are extrapolated from timing assumptions and are provided only to show how a cost model for complaint triage could be framed.
 
@@ -556,8 +558,7 @@ This is a **portfolio proof-of-concept** with the following scope:
 If you use this project, please cite:
 
 ```
-Rule-based Complaint Routing Prototype (CFPB data)
-Rule-based complaint routing prototype
+Rule-based complaint-routing prototype (CFPB data)
 Processing: 2 sec/complaint (illustrative)
 Dataset: CFPB Consumer Complaint Database (284,500 complaints)
 ```
