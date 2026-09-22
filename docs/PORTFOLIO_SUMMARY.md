@@ -1,4 +1,4 @@
-# 🎯 Portfolio Summary: Rule-based Complaint Routing Prototype
+# Portfolio Summary: Rule-based Complaint Routing Prototype
 
 ## ✅ PROJECT COMPLETE
 

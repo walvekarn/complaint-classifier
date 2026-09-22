@@ -456,7 +456,7 @@ docker-compose up
 
 `src/llm_assist.py` is a stub; this version makes no LLM call. Classification is rule-based.
 
-The stub only checks whether an `OPENAI_API_KEY` or Azure OpenAI environment variable is set and returns `None`; the API (`src/app.py`) uses `src/classifier.py`.
+The stub checks for provider API-key environment variables and returns `None`; the API (`src/app.py`) uses `src/classifier.py`.
 
 ---
 
