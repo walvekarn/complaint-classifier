@@ -1,3 +1,5 @@
+Status: portfolio prototype, rule-based, on public CFPB data. Not related to my Wells Fargo work. No accuracy claim is made.
+
 # Rule-based complaint-routing prototype (CFPB data)
 
 ## What This Is
@@ -18,7 +20,7 @@ Includes a **human-in-the-loop gate** that flags low-confidence cases (<0.75) fo
 
 ## 🎯 Problems It Solves
 
-✅ **Slow Manual Triage** - Reduces processing time from 3-5 minutes to ~2 seconds per complaint  
+✅ **Slow Manual Triage** - Classifies and routes complaints automatically instead of by hand  
 ✅ **Inconsistency** - Standardized classification logic eliminates reviewer variability  
 ✅ **Hidden Criticals** - Auto-flags fraud, identity theft, and high-severity cases for immediate escalation  
 ✅ **Auditability** - Confidence scores and structured outputs enable quality tracking  
@@ -54,7 +56,7 @@ A **rule-based complaint-routing prototype** that automatically:
 6. **Provides confidence scores** (0.0-1.0) to flag cases needing manual review
 
 ### Key Features
-✅ **2 seconds per complaint** (vs. 3-5 minutes manual)  
+✅ **Fast batch runs** (a 100-row demo ran in about 3.5 seconds)  
 ✅ **Automatic priority scoring** for critical cases  
 ✅ **Intelligent routing** based on issue type and severity  
 ✅ **Confidence flagging** for quality assurance  
@@ -69,8 +71,8 @@ A **rule-based complaint-routing prototype** that automatically:
 |--------|-------|
 | **Dataset Size** | 284,500 complaints (CFPB database) |
 | **Test Sample** | 100 complaints |
-| **Processing Speed** | ~2 seconds per complaint (illustrative; a 100-row demo ran in ~3.5 s total) |
-| **Average Confidence** | 0.826 (82.6%) |
+| **Processing Speed** | A 100-row demo ran in ~3.5 s total |
+| **Average Confidence** | 0.826 (heuristic rule score, not accuracy) |
 
 ### Classification Distribution
 
@@ -570,8 +572,7 @@ Dataset: CFPB Consumer Complaint Database (284,500 complaints)
 | Metric | Value |
 |--------|-------|
 | 📊 Total Complaints | 284,500 |
-| ⚡ Speed | 2 sec/complaint |
-| 🎯 Confidence | 82.6% average |
+| ⚡ Demo run | 100 rows in ~3.5 s |
 
 ---
 
